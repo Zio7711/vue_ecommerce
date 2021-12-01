@@ -37,7 +37,12 @@
             id="autocomplete"
             class="input-error input-xxlarge"
           />
-          <button class="sui-btn btn-xlarge btn-danger" type="button">
+
+          <button
+            class="sui-btn btn-xlarge btn-danger"
+            type="button"
+            @click="goSearch"
+          >
             搜索
           </button>
         </form>
@@ -47,7 +52,14 @@
 </template>
 
 <script>
-  export default {};
+  export default {
+    name: '',
+    methods: {
+      goSearch() {
+        this.$router.push('/search');
+      },
+    },
+  };
 </script>
 
 <style lang="less">
