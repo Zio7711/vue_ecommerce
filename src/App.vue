@@ -2,6 +2,8 @@
   <div>
     <Header />
     I am the root
+
+    <router-view></router-view>
     <Footer />
   </div>
 </template>

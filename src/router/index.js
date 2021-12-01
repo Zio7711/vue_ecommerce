@@ -13,17 +13,25 @@ export default new VueRouter({
       path: '/home',
       component: Home,
     },
+
     {
       path: '/search',
       component: Search,
     },
+
     {
       path: '/register',
       component: Register,
     },
+
     {
       path: '/login',
       component: Login,
+    },
+
+    {
+      path: '*',
+      redirect: '/home',
     },
   ],
 });
