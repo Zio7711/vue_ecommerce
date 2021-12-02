@@ -5,6 +5,8 @@
     <Recommend />
     <Rank />
     <Likes />
+    <Floor />
+    <Floor />
   </div>
 </template>
 
@@ -13,6 +15,7 @@
   import Recommend from '@/pages/Home/Recommend';
   import Rank from '@/pages/Home/Rank';
   import Likes from '@/pages/Home/Likes';
+  import Floor from '@/pages/Home/Floor';
 
   export default {
     name: '',
@@ -21,6 +24,7 @@
       Recommend,
       Rank,
       Likes,
+      Floor,
     },
   };
 </script>
