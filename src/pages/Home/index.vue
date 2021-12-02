@@ -1,11 +1,13 @@
 <template>
   <div>
     <TypeNav />
+    <ListContainer />
   </div>
 </template>
 
 <script>
-  export default { name: '' };
+  import ListContainer from '@/pages/Home/ListContainer';
+  export default { name: '', components: { ListContainer } };
 </script>
 
 <style></style>
