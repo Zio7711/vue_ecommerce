@@ -12,21 +12,33 @@ export default new VueRouter({
     {
       path: '/home',
       component: Home,
+      meta: {
+        show: true,
+      },
     },
 
     {
       path: '/search',
       component: Search,
+      meta: {
+        show: true,
+      },
     },
 
     {
       path: '/register',
       component: Register,
+      meta: {
+        show: false,
+      },
     },
 
     {
       path: '/login',
       component: Login,
+      meta: {
+        show: false,
+      },
     },
 
     {

@@ -4,7 +4,9 @@
     I am the root
 
     <router-view></router-view>
-    <Footer />
+    <!-- show it when at HOME page and search page -->
+    <!-- hide it when at login and register -->
+    <Footer v-show="$route.meta.show === true" />
   </div>
 </template>
 
