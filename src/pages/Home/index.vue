@@ -1,9 +1,11 @@
 <template>
-  <div>I am the home page</div>
+  <div>
+    <TypeNav />
+  </div>
 </template>
 
 <script>
-  export default {};
+  export default { name: '' };
 </script>
 
 <style></style>
