@@ -31,7 +31,7 @@
         </router-link>
       </h1>
       <div class="searchArea">
-        <form action="###" class="searchForm">
+        <form @submit="goSearch" class="searchForm">
           <input
             type="text"
             id="autocomplete"
@@ -39,11 +39,7 @@
             v-model="keyword"
           />
 
-          <button
-            class="sui-btn btn-xlarge btn-danger"
-            type="button"
-            @click="goSearch"
-          >
+          <button class="sui-btn btn-xlarge btn-danger" type="button">
             搜索
           </button>
         </form>

@@ -7,6 +7,34 @@ import Login from '@/pages/Login';
 
 Vue.use(VueRouter);
 
+let originPush = VueRouter.prototype.push;
+VueRouter.prototype.push = function (location, resolve, reject) {
+  if (resolve && reject) {
+    originPush.call(this, location, resolve, reject);
+  } else {
+    originPush.call(
+      this,
+      location,
+      () => {},
+      () => {}
+    );
+  }
+};
+
+let originReplace = VueRouter.prototype.replace;
+VueRouter.prototype.replace = function (location, resolve, reject) {
+  if (resolve && reject) {
+    originReplace.replace(this, location, resolve, reject);
+  } else {
+    originReplace.replace(
+      this,
+      location,
+      () => {},
+      () => {}
+    );
+  }
+};
+
 export default new VueRouter({
   routes: [
     {
@@ -24,6 +52,7 @@ export default new VueRouter({
         show: true,
       },
       name: 'search',
+      props: true,
     },
 
     {
