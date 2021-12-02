@@ -1,7 +1,6 @@
 <template>
   <div>
     <Header />
-    I am the root
 
     <router-view></router-view>
     <!-- show it when at HOME page and search page -->

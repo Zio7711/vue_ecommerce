@@ -1697,7 +1697,7 @@
   };
 </script>
 
-<style lang="less">
+<style scoped lang="less">
   .type-nav {
     border-bottom: 2px solid #e1251b;
 

@@ -26,10 +26,10 @@
 </template>
 
 <script>
-  export default {};
+  export default { name: '' };
 </script>
 
-<style lang="less">
+<style scoped lang="less">
   .today-recommend {
     .py-container {
       width: 1200px;
@@ -37,10 +37,10 @@
 
       .recommend {
         height: 165px;
+        width: 100%;
         background-color: #eaeaea;
         margin: 10px 0;
         display: flex;
-
         .clock {
           width: 16.67%;
           background-color: #5c5251;
