@@ -1,7 +1,42 @@
 <template>
   <div class="type-nav">
     <div class="container">
-      <h2 class="all">全部商品分类</h2>
+      <div @mouseleave="leaveIndex">
+        <h2 class="all">全部商品分类</h2>
+        <div class="sort">
+          <div class="all-sort-list2">
+            <div
+              class="item"
+              v-for="(c1, index) in categoryList"
+              :key="c1.categoryId"
+              :class="{ cur: currentIndex === index }"
+            >
+              <h3 @mouseenter="changeIndex(index)">
+                <a href="">{{ c1.categoryName }} {{ index }}</a>
+              </h3>
+              <div class="item-list clearfix">
+                <div
+                  class="subitem"
+                  v-for="c2 in c1.categoryChild"
+                  :key="c2.categoryId"
+                >
+                  <dl class="fore">
+                    <dt>
+                      <a href="">{{ c2.categoryName }}</a>
+                    </dt>
+                    <dd>
+                      <em v-for="c3 in c2.categoryChild" :key="c3.categoryId">
+                        <a href="">{{ c3.categoryName }}</a>
+                      </em>
+                    </dd>
+                  </dl>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <nav class="nav">
         <a href="###">服装城</a>
         <a href="###">美妆馆</a>
@@ -12,33 +47,6 @@
         <a href="###">有趣</a>
         <a href="###">秒杀</a>
       </nav>
-      <div class="sort">
-        <div class="all-sort-list2">
-          <div class="item" v-for="c1 in categoryList" :key="c1.categoryId">
-            <h3>
-              <a href="">{{ c1.categoryName }}</a>
-            </h3>
-            <div class="item-list clearfix">
-              <div
-                class="subitem"
-                v-for="c2 in c1.categoryChild"
-                :key="c2.categoryId"
-              >
-                <dl class="fore">
-                  <dt>
-                    <a href="">{{ c2.categoryName }}</a>
-                  </dt>
-                  <dd>
-                    <em v-for="c3 in c2.categoryChild" :key="c3.categoryId">
-                      <a href="">{{ c3.categoryName }}</a>
-                    </em>
-                  </dd>
-                </dl>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
 </template>
@@ -47,6 +55,21 @@
   import { mapState } from 'vuex';
   export default {
     name: 'TypeNav',
+
+    data() {
+      return {
+        currentIndex: -1,
+      };
+    },
+
+    methods: {
+      changeIndex(index) {
+        this.currentIndex = index;
+      },
+      leaveIndex() {
+        this.currentIndex = -1;
+      },
+    },
     mounted() {
       this.$store.dispatch('categoryList');
     },
@@ -177,6 +200,9 @@
                 display: block;
               }
             }
+          }
+          .cur {
+            background-color: lightblue;
           }
         }
       }
