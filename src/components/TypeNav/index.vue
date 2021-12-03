@@ -12,9 +12,12 @@
               :class="{ cur: currentIndex === index }"
             >
               <h3 @mouseenter="changeIndex(index)">
-                <a href="">{{ c1.categoryName }} {{ index }}</a>
+                <a href="">{{ c1.categoryName }}</a>
               </h3>
-              <div class="item-list clearfix">
+              <div
+                class="item-list clearfix"
+                :style="{ display: currentIndex === index ? 'block' : 'none' }"
+              >
                 <div
                   class="subitem"
                   v-for="c2 in c1.categoryChild"
@@ -192,12 +195,6 @@
                     }
                   }
                 }
-              }
-            }
-
-            &:hover {
-              .item-list {
-                display: block;
               }
             }
           }
