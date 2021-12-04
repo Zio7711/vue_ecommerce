@@ -100,7 +100,7 @@
 
           if (category1id) {
             query.category1Id = category1id;
-          } else if (category3id) {
+          } else if (category2id) {
             query.category2Id = category2id;
           } else {
             query.category3Id = category3id;
