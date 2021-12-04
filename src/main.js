@@ -4,6 +4,7 @@ import router from '@/router';
 // global component
 import TypeNav from '@/components/TypeNav';
 import store from './store';
+import '@/mock/mockServe';
 
 Vue.component(TypeNav.name, TypeNav);
 
