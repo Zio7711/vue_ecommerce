@@ -39,7 +39,7 @@
             v-model="keyword"
           />
 
-          <button class="sui-btn btn-xlarge btn-danger" type="button">
+          <button class="sui-btn btn-xlarge btn-danger" type="submit">
             搜索
           </button>
         </form>
