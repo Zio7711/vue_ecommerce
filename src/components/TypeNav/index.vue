@@ -115,7 +115,10 @@
             query.category3Id = category3id;
           }
 
-          location.query = query;
+          if (this.$route.params) {
+            location.params = this.$route.params;
+            location.query = query;
+          }
 
           this.$router.push(location);
         }
