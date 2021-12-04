@@ -87,8 +87,11 @@
       }, 50),
 
       leaveIndex() {
+        if (this.$route.path != '/home') {
+          this.show = false;
+        }
+
         this.currentIndex = -1;
-        this.show = false;
       },
 
       goSearch(event) {
