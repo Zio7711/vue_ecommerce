@@ -1,5 +1,5 @@
 <template>
-  <div>I am the Search Page</div>
+  <TypeNav />
 </template>
 
 <script>
