@@ -19,6 +19,13 @@
       Header,
       Footer,
     },
+
+    mounted() {
+      this.$store.dispatch('categoryList');
+      if (this.$route.path !== '/home') {
+        this.show = false;
+      }
+    },
   };
 </script>
 
