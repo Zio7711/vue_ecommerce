@@ -1,7 +1,7 @@
 <template>
   <div class="type-nav">
     <div class="container">
-      <div @mouseleave="leaveIndex">
+      <div @mouseleave="leaveIndex" @mouseenter="enterShow">
         <h2 class="all">全部商品分类</h2>
         <div class="sort" v-show="show">
           <div class="all-sort-list2" @click="goSearch">
@@ -88,6 +88,7 @@
 
       leaveIndex() {
         this.currentIndex = -1;
+        this.show = false;
       },
 
       goSearch(event) {
@@ -111,6 +112,10 @@
 
           this.$router.push(location);
         }
+      },
+
+      enterShow() {
+        this.show = true;
       },
     },
     mounted() {
