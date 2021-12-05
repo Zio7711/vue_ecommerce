@@ -7,7 +7,7 @@
           <div class="swiper-wrapper">
             <div
               class="swiper-slide"
-              v-for="(carousel, index) in bannerList"
+              v-for="carousel in bannerList"
               :key="carousel.id"
             >
               <img :src="carousel.imgUrl" />
@@ -112,18 +112,19 @@
 
     mounted() {
       this.$store.dispatch('getBannerList');
-    },
-    updated() {
-      new Swiper('.swiper-container', {
-        loop: true,
-        pagination: {
-          el: '.swiper-pagination',
-        },
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-        },
-      });
+      setTimeout(() => {
+        new Swiper('.swiper-container', {
+          loop: true,
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+        });
+      }, 1000);
     },
   };
 </script>
