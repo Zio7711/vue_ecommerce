@@ -1,5 +1,5 @@
 //api management
-import requests from './request';
+import requests from './axios';
 
 //api/product/getBaseCategoryList get no parameters
 
@@ -15,4 +15,8 @@ export const reqCategoryList = () => {
 
 export const reqGetBannerList = () => {
   return mockRequests.get('/banner');
+};
+
+export const reqFloorList = () => {
+  return mockRequests.get('/floor');
 };
