@@ -112,19 +112,39 @@
 
     mounted() {
       this.$store.dispatch('getBannerList');
-      setTimeout(() => {
-        new Swiper('.swiper-container', {
-          loop: true,
-          pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-          },
-          navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-          },
-        });
-      }, 1000);
+      // setTimeout(() => {
+      //   new Swiper('.swiper-container', {
+      //     loop: true,
+      //     pagination: {
+      //       el: '.swiper-pagination',
+      //       clickable: true,
+      //     },
+      //     navigation: {
+      //       nextEl: '.swiper-button-next',
+      //       prevEl: '.swiper-button-prev',
+      //     },
+      //   });
+      // }, 1000);
+    },
+
+    watch: {
+      bannerList: {
+        handler() {
+          this.$nextTick(() => {
+            new Swiper('.swiper-container', {
+              loop: true,
+              pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+              },
+              navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+              },
+            });
+          });
+        },
+      },
     },
   };
 </script>
