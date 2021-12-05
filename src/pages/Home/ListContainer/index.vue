@@ -3,7 +3,7 @@
     <div class="sortList clearfix">
       <div class="center">
         <!--banner轮播-->
-        <div class="swiper-container" id="mySwiper">
+        <div class="swiper-container" ref="mySwiper">
           <div class="swiper-wrapper">
             <div
               class="swiper-slide"
@@ -112,26 +112,13 @@
 
     mounted() {
       this.$store.dispatch('getBannerList');
-      // setTimeout(() => {
-      //   new Swiper('.swiper-container', {
-      //     loop: true,
-      //     pagination: {
-      //       el: '.swiper-pagination',
-      //       clickable: true,
-      //     },
-      //     navigation: {
-      //       nextEl: '.swiper-button-next',
-      //       prevEl: '.swiper-button-prev',
-      //     },
-      //   });
-      // }, 1000);
     },
 
     watch: {
       bannerList: {
         handler() {
           this.$nextTick(() => {
-            new Swiper('.swiper-container', {
+            new Swiper(this.$refs.mySwiper, {
               loop: true,
               pagination: {
                 el: '.swiper-pagination',
