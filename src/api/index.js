@@ -20,3 +20,12 @@ export const reqGetBannerList = () => {
 export const reqFloorList = () => {
   return mockRequests.get('/floor');
 };
+
+// post request with params /api/list
+export const reqGetSearchInfo = (params) => {
+  requests({
+    url: '/list',
+    method: 'post',
+    data: params,
+  });
+};
