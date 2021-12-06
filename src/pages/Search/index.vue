@@ -466,6 +466,10 @@
     components: {
       SearchSelector,
     },
+
+    mounted() {
+      this.$store.dispatch('getSearchList', {});
+    },
   };
 </script>
 

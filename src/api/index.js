@@ -23,7 +23,7 @@ export const reqFloorList = () => {
 
 // post request with params /api/list
 export const reqGetSearchInfo = (params) => {
-  requests({
+  return requests({
     url: '/list',
     method: 'post',
     data: params,
