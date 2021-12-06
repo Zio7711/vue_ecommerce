@@ -128,8 +128,7 @@
           </li>
         </ul>
       </div>
-      <div class="fl ext">
-      </div>
+      <div class="fl ext"></div>
     </div>
     <div class="type-wrap">
       <div class="fl key">更多筛选项</div>
@@ -152,8 +151,7 @@
           </li>
         </ul>
       </div>
-      <div class="fl ext">
-      </div>
+      <div class="fl ext"></div>
     </div>
   </div>
 </template>
@@ -161,7 +159,7 @@
 <script>
   export default {
     name: 'SearchSelector',
-  }
+  };
 </script>
 
 <style lang="less" scoped>

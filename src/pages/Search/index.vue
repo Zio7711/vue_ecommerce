@@ -459,7 +459,7 @@
 </template>
 
 <script>
-  import SearchSelector from './SearchSelector/SearchSelector';
+  import SearchSelector from './SearchSelector/';
   export default {
     name: 'Search',
 
