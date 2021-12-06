@@ -116,6 +116,7 @@
 
     watch: {
       bannerList: {
+        immediate: true,
         handler() {
           this.$nextTick(() => {
             new Swiper(this.$refs.mySwiper, {

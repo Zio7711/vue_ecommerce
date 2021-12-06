@@ -31,7 +31,7 @@
                 <div class="swiper-wrapper">
                   <div
                     class="swiper-slide"
-                    v-for="(carousel, index) in list.carouselList"
+                    v-for="carousel in list.carouselList"
                     :key="carousel.id"
                   >
                     <img :src="carousel.imgUrl" />
@@ -79,18 +79,25 @@
     name: 'Floor',
     props: ['list'],
 
-    mounted() {
-      new Swiper(this.$refs.floor1Swiper, {
-        loop: true,
-        pagination: {
-          el: '.swiper-pagination',
-          clickable: true,
+    watch: {
+      list: {
+        immediate: true,
+        handler() {
+          this.$nextTick(() => {
+            new Swiper(this.$refs.floor1Swiper, {
+              loop: true,
+              pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+              },
+              navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+              },
+            });
+          });
         },
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-        },
-      });
+      },
     },
   };
 </script>
