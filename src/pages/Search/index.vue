@@ -459,12 +459,17 @@
 </template>
 
 <script>
+  import { mapGetters } from 'vuex';
   import SearchSelector from './SearchSelector/';
   export default {
     name: 'Search',
 
     components: {
       SearchSelector,
+    },
+
+    computed: {
+      ...mapGetters(['goodsList', 'trademarkList', 'attrsList']),
     },
 
     mounted() {

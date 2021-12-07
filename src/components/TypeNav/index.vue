@@ -136,6 +136,10 @@
         },
       }),
     },
+
+    mounted() {
+      console.log(this);
+    },
   };
 </script>
 

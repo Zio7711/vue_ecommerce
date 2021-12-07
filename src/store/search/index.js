@@ -18,7 +18,19 @@ const actions = {
     }
   },
 };
-const getters = {};
+const getters = {
+  goodList(state) {
+    return state.search.searchList.goodList;
+  },
+
+  trademarkList(state) {
+    return state.search.searchList.trademarkList;
+  },
+
+  attrsList(state) {
+    return state.search.searchList.attrsList;
+  },
+};
 
 export default {
   state,
