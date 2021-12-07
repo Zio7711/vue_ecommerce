@@ -19,16 +19,16 @@ const actions = {
   },
 };
 const getters = {
-  goodList(state) {
-    return state.search.searchList.goodList;
+  goodsList(state) {
+    return state.searchList.goodsList;
   },
 
   trademarkList(state) {
-    return state.search.searchList.trademarkList;
+    return state.searchList.trademarkList;
   },
 
   attrsList(state) {
-    return state.search.searchList.attrsList;
+    return state.searchList.attrsList;
   },
 };
 
