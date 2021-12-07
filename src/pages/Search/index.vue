@@ -128,6 +128,22 @@
   import SearchSelector from './SearchSelector/';
   export default {
     name: 'Search',
+    data() {
+      return {
+        searchParams: {
+          category1Id: '',
+          category2Id: '',
+          category3Id: '',
+          categoryName: '',
+          keyword: '',
+          order: '',
+          pageNo: 1,
+          pageSize: 10,
+          props: [],
+          trademark: '',
+        },
+      };
+    },
 
     components: {
       SearchSelector,
@@ -137,8 +153,18 @@
       ...mapGetters(['goodsList', 'trademarkList', 'attrsList']),
     },
 
+    beforeCreate() {
+      Object.assign(this.searchParams, this.$route.query, this.$route.params);
+    },
+
     mounted() {
-      this.$store.dispatch('getSearchList', {});
+      this.getSearch();
+    },
+
+    methods: {
+      getSearch() {
+        this.$store.dispatch('getSearchList', this.searchParams);
+      },
     },
   };
 </script>
