@@ -168,7 +168,11 @@
       },
 
       removeCategoryName() {
-        this.searchParams.categoryName;
+        this.searchParams.categoryName = '';
+        this.searchParams.category1Id = '';
+        this.searchParams.category2Id = '';
+        this.searchParams.category3Id = '';
+        this.getSearch();
       },
     },
     watch: {
