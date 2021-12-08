@@ -153,7 +153,7 @@
       ...mapGetters(['goodsList', 'trademarkList', 'attrsList']),
     },
 
-    beforeCreate() {
+    beforeMount() {
       Object.assign(this.searchParams, this.$route.query, this.$route.params);
     },
 

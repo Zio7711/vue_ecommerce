@@ -35,33 +35,6 @@
           <li v-for="(attrValue, index) in attr.attrValueList" :key="index">
             <a>{{ attrValue }}</a>
           </li>
-          <li>
-            <a>电信2G</a>
-          </li>
-          <li>
-            <a>电信3G</a>
-          </li>
-          <li>
-            <a>移动3G</a>
-          </li>
-          <li>
-            <a>联通3G</a>
-          </li>
-          <li>
-            <a>联通4G</a>
-          </li>
-          <li>
-            <a>电信3G</a>
-          </li>
-          <li>
-            <a>移动3G</a>
-          </li>
-          <li>
-            <a>联通3G</a>
-          </li>
-          <li>
-            <a>联通4G</a>
-          </li>
         </ul>
       </div>
       <div class="fl ext"></div>
