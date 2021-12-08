@@ -172,6 +172,9 @@
         //re-organize params
         Object.assign(this.searchParams, this.$route.query, this.$route.params);
         this.getSearch();
+        this.searchParams.category1Id = '';
+        this.searchParams.category2Id = '';
+        this.searchParams.category3Id = '';
       },
     },
   };
