@@ -138,7 +138,7 @@
           keyword: '',
           order: '',
           pageNo: 1,
-          pageSize: 10,
+          pageSize: 3,
           props: [],
           trademark: '',
         },
