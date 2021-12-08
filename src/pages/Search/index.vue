@@ -154,6 +154,7 @@
     },
 
     beforeMount() {
+      //before the request, merge params and query
       Object.assign(this.searchParams, this.$route.query, this.$route.params);
     },
 
@@ -164,6 +165,13 @@
     methods: {
       getSearch() {
         this.$store.dispatch('getSearchList', this.searchParams);
+      },
+    },
+    watch: {
+      $route() {
+        //re-organize params
+        Object.assign(this.searchParams, this.$route.query, this.$route.params);
+        this.getSearch();
       },
     },
   };
