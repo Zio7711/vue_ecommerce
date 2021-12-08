@@ -168,10 +168,10 @@
       },
 
       removeCategoryName() {
-        this.searchParams.categoryName = '';
-        this.searchParams.category1Id = '';
-        this.searchParams.category2Id = '';
-        this.searchParams.category3Id = '';
+        this.searchParams.categoryName = undefined;
+        this.searchParams.category1Id = undefined;
+        this.searchParams.category2Id = undefined;
+        this.searchParams.category3Id = undefined;
         this.getSearch();
       },
     },
@@ -180,9 +180,9 @@
         //re-organize params
         Object.assign(this.searchParams, this.$route.query, this.$route.params);
         this.getSearch();
-        this.searchParams.category1Id = '';
-        this.searchParams.category2Id = '';
-        this.searchParams.category3Id = '';
+        this.searchParams.category1Id = undefined;
+        this.searchParams.category2Id = undefined;
+        this.searchParams.category3Id = undefined;
       },
     },
   };
