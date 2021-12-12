@@ -187,6 +187,8 @@
       removeKeyword() {
         this.searchParams.keyword = undefined;
         this.getSearch();
+
+        this.$bus.$emit('clear');
       },
     },
     watch: {

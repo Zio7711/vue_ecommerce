@@ -18,4 +18,8 @@ new Vue({
   router,
   //register store
   store,
+
+  beforeCreate() {
+    Vue.prototype.$bus = this;
+  },
 }).$mount('#app');
