@@ -24,7 +24,7 @@
         </div>
 
         <!--selector-->
-        <SearchSelector />
+        <SearchSelector @trademarkInfo="trademarkInfo" />
 
         <!--details-->
         <div class="details clearfix">
@@ -193,6 +193,10 @@
         if (this.$route.query) {
           this.$router.push({ name: 'search', query: this.$route.query });
         }
+      },
+
+      trademarkInfo(trademark) {
+        console.log(trademark);
       },
     },
     watch: {
