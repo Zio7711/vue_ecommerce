@@ -23,7 +23,7 @@
 
             <li class="with-x" v-if="searchParams.trademark">
               {{ searchParams.trademark.split(':')[1] }}
-              <i @click="removeKeyword">×</i>
+              <i @click="removeTrademark">×</i>
             </li>
           </ul>
         </div>
@@ -202,6 +202,11 @@
 
       trademarkInfo(trademark) {
         this.searchParams.trademark = `${trademark.tmId} : ${trademark.tmName}`;
+        this.getSearch();
+      },
+
+      removeTrademark() {
+        this.searchParams.trademark = undefined;
         this.getSearch();
       },
     },
