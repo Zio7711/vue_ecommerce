@@ -173,6 +173,10 @@
         this.searchParams.category2Id = undefined;
         this.searchParams.category3Id = undefined;
         this.getSearch();
+        //delete only query data not params data
+        if (this.$route.params) {
+          this.$router.push({ name: 'search', params: this.$route.params });
+        }
       },
     },
     watch: {
