@@ -15,6 +15,11 @@
               {{ searchParams.categoryName }}
               <i @click="removeCategoryName">×</i>
             </li>
+
+            <li class="with-x" v-if="searchParams.keyword">
+              {{ searchParams.keyword }}
+              <i @click="removeKeyword">×</i>
+            </li>
           </ul>
         </div>
 
@@ -177,6 +182,11 @@
         if (this.$route.params) {
           this.$router.push({ name: 'search', params: this.$route.params });
         }
+      },
+
+      removeKeyword() {
+        this.searchParams.keyword = undefined;
+        this.getSearch();
       },
     },
     watch: {
