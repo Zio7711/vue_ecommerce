@@ -20,6 +20,11 @@
               {{ searchParams.keyword }}
               <i @click="removeKeyword">×</i>
             </li>
+
+            <li class="with-x" v-if="searchParams.trademark">
+              {{ searchParams.trademark.split(':')[1] }}
+              <i @click="removeKeyword">×</i>
+            </li>
           </ul>
         </div>
 
@@ -196,7 +201,8 @@
       },
 
       trademarkInfo(trademark) {
-        console.log(trademark);
+        this.searchParams.trademark = `${trademark.tmId} : ${trademark.tmName}`;
+        this.getSearch();
       },
     },
     watch: {
