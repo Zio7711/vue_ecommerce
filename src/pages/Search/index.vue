@@ -189,6 +189,10 @@
         this.getSearch();
 
         this.$bus.$emit('clear');
+
+        if (this.$route.query) {
+          this.$router.push({ name: 'search', query: this.$route.query });
+        }
       },
     },
     watch: {
