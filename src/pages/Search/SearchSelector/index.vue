@@ -22,7 +22,11 @@
       <div class="fl key">{{ attr.attrName }}</div>
       <div class="fl value">
         <ul class="type-list">
-          <li v-for="(attrValue, index) in attr.attrValueList" :key="index">
+          <li
+            v-for="attrValue in attr.attrValueList"
+            :key="attrValue"
+            @click="attrInfo(attr.attrId, attrValue)"
+          >
             <a>{{ attrValue }}</a>
           </li>
         </ul>
@@ -40,6 +44,10 @@
     methods: {
       trademarkHandler(trademark) {
         this.$emit('trademarkInfo', trademark);
+      },
+
+      attrInfo(attrId, attrValue) {
+        this.$emit('attrInfo', attrId, attrValue);
       },
     },
 

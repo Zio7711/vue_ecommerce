@@ -29,7 +29,7 @@
         </div>
 
         <!--selector-->
-        <SearchSelector @trademarkInfo="trademarkInfo" />
+        <SearchSelector @trademarkInfo="trademarkInfo" @attrInfo="attrInfo" />
 
         <!--details-->
         <div class="details clearfix">
@@ -202,13 +202,16 @@
 
       trademarkInfo(trademark) {
         this.searchParams.trademark = `${trademark.tmId}:${trademark.tmName}`;
-        console.log(this.searchParams);
         this.getSearch();
       },
 
       removeTrademark() {
         this.searchParams.trademark = undefined;
         this.getSearch();
+      },
+
+      attrInfo(attr, attrValue) {
+        console.log(attr, attrValue);
       },
     },
     watch: {
