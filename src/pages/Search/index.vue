@@ -46,22 +46,10 @@
             <div class="navbar-inner filter">
               <ul class="sui-nav">
                 <li class="active">
-                  <a href="#">综合</a>
+                  <a>综合</a>
                 </li>
                 <li>
-                  <a href="#">销量</a>
-                </li>
-                <li>
-                  <a href="#">新品</a>
-                </li>
-                <li>
-                  <a href="#">评价</a>
-                </li>
-                <li>
-                  <a href="#">价格⬆</a>
-                </li>
-                <li>
-                  <a href="#">价格⬇</a>
+                  <a>价格</a>
                 </li>
               </ul>
             </div>
@@ -155,7 +143,7 @@
           category3Id: '',
           categoryName: '',
           keyword: '',
-          order: '',
+          order: '1:desc',
           pageNo: 1,
           pageSize: 10,
           props: [],
