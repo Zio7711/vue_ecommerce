@@ -25,6 +25,15 @@
               {{ searchParams.trademark.split(':')[1] }}
               <i @click="removeTrademark">×</i>
             </li>
+
+            <li
+              class="with-x"
+              v-for="(attrValue, index) in searchParams.props"
+              :key="index"
+            >
+              {{ attrValue.split(':')[1] }}
+              <i @click="removeTrademark">×</i>
+            </li>
           </ul>
         </div>
 
@@ -212,7 +221,9 @@
 
       attrInfo(attr, attrValue) {
         let props = `${attr.attrId}:${attrValue}:${attr.attrName}`;
-        this.searchParams.props.push(props);
+        if (this.searchParams.props.indexOf(props) === -1) {
+          this.searchParams.props.push(props);
+        }
         this.getSearch();
       },
     },
