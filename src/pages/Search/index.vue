@@ -32,7 +32,7 @@
               :key="index"
             >
               {{ attrValue.split(':')[1] }}
-              <i @click="removeTrademark">×</i>
+              <i @click="removeAttr(index)">×</i>
             </li>
           </ul>
         </div>
@@ -224,6 +224,11 @@
         if (this.searchParams.props.indexOf(props) === -1) {
           this.searchParams.props.push(props);
         }
+        this.getSearch();
+      },
+
+      removeAttr(index) {
+        this.searchParams.props.splice(index, 1);
         this.getSearch();
       },
     },
