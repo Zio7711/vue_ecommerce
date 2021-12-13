@@ -148,7 +148,7 @@
           keyword: '',
           order: '',
           pageNo: 1,
-          pageSize: 3,
+          pageSize: 10,
           props: [],
           trademark: '',
         },
@@ -201,7 +201,8 @@
       },
 
       trademarkInfo(trademark) {
-        this.searchParams.trademark = `${trademark.tmId} : ${trademark.tmName}`;
+        this.searchParams.trademark = `${trademark.tmId}:${trademark.tmName}`;
+        console.log(this.searchParams);
         this.getSearch();
       },
 
