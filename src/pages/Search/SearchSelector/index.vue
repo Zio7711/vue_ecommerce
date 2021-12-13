@@ -25,7 +25,7 @@
           <li
             v-for="attrValue in attr.attrValueList"
             :key="attrValue"
-            @click="attrInfo(attr.attrId, attrValue)"
+            @click="attrInfo(attr, attrValue)"
           >
             <a>{{ attrValue }}</a>
           </li>

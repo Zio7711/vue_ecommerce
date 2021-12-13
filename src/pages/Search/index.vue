@@ -211,7 +211,9 @@
       },
 
       attrInfo(attr, attrValue) {
-        console.log(attr, attrValue);
+        let props = `${attr.attrId}:${attrValue}:${attr.attrName}`;
+        this.searchParams.props.push(props);
+        this.getSearch();
       },
     },
     watch: {
