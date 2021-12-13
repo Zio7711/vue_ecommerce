@@ -45,11 +45,15 @@
           <div class="sui-navbar">
             <div class="navbar-inner filter">
               <ul class="sui-nav">
-                <li class="active">
-                  <a>综合</a>
+                <li :class="{ active: isOne }">
+                  <a
+                    >综合 <span v-show="isOne" class="iconfont icon-down"></span
+                  ></a>
                 </li>
-                <li>
-                  <a>价格</a>
+                <li :class="{ active: isTwo }">
+                  <a
+                    >价格 <span v-show="isTwo" class="iconfont icon-up"></span
+                  ></a>
                 </li>
               </ul>
             </div>
@@ -143,7 +147,7 @@
           category3Id: '',
           categoryName: '',
           keyword: '',
-          order: '1:desc',
+          order: '2:desc',
           pageNo: 1,
           pageSize: 10,
           props: [],
@@ -158,6 +162,14 @@
 
     computed: {
       ...mapGetters(['goodsList', 'trademarkList', 'attrsList']),
+
+      isOne() {
+        return this.searchParams.order.indexOf('1') !== -1;
+      },
+
+      isTwo() {
+        return this.searchParams.order.indexOf('2') !== -1;
+      },
     },
 
     beforeMount() {
