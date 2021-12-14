@@ -45,7 +45,7 @@
           <div class="sui-navbar">
             <div class="navbar-inner filter">
               <ul class="sui-nav">
-                <li :class="{ active: isOne }">
+                <li :class="{ active: isOne }" @click="changeOrder('1')">
                   <a
                     >综合
                     <span
@@ -58,7 +58,7 @@
                     ></span
                   ></a>
                 </li>
-                <li :class="{ active: isTwo }">
+                <li :class="{ active: isTwo }" @click="changeOrder('2')">
                   <a
                     >价格
                     <span
@@ -163,7 +163,7 @@
           category3Id: '',
           categoryName: '',
           keyword: '',
-          order: '1:asc',
+          order: '1:desc',
           pageNo: 1,
           pageSize: 10,
           props: [],
@@ -253,6 +253,24 @@
 
       removeAttr(index) {
         this.searchParams.props.splice(index, 1);
+        this.getSearch();
+      },
+
+      changeOrder(flag) {
+        //distinguish overall or price tag
+        let originFlag = this.searchParams.order.split(':')[0];
+        let originSort = this.searchParams.order.split(':')[1];
+
+        let newOrder = '';
+
+        if (flag === originFlag) {
+          newOrder = `${originFlag}:${originSort === 'desc' ? 'asc' : 'desc'}`;
+        } else {
+          newOrder = `${flag}:desc`;
+        }
+
+        this.searchParams.order = newOrder;
+
         this.getSearch();
       },
     },
