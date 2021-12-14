@@ -11,10 +11,10 @@
     <button>7</button>
 
     <button>···</button>
-    <button>9</button>
+    <button>{{ totalPage }}</button>
     <button>上一页</button>
 
-    <button style="margin-left: 30px">共 60 条</button>
+    <button style="margin-left: 30px">共 {{ total }} 条</button>
   </div>
 </template>
 
@@ -23,6 +23,12 @@
     name: 'Pagination',
 
     props: ['pageNo', 'pageSize', 'continues', 'total'],
+
+    computed: {
+      totalPage() {
+        return Math.ceil(this.total / this.pageSize);
+      },
+    },
   };
 </script>
 
