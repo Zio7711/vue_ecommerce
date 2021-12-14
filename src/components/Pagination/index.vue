@@ -28,6 +28,32 @@
       totalPage() {
         return Math.ceil(this.total / this.pageSize);
       },
+
+      startNumAndEndNum() {
+        const { continues, pageNo, totalPage } = this;
+        let start = 0;
+        let end = 0;
+
+        if (continues > totalPage) {
+          start = 1;
+          end = totalPage;
+        } else {
+          start = pageNo - parseInt(continues / 2);
+          end = pageNo + parseInt(continues / 2);
+
+          if (start < 1) {
+            start = 1;
+            end = this.continues;
+          }
+
+          if (end > totalPage) {
+            start = totalPage - continues + 1;
+            end = totalPage;
+          }
+        }
+
+        return { start, end };
+      },
     },
   };
 </script>
