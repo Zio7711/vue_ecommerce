@@ -47,12 +47,28 @@
               <ul class="sui-nav">
                 <li :class="{ active: isOne }">
                   <a
-                    >综合 <span v-show="isOne" class="iconfont icon-down"></span
+                    >综合
+                    <span
+                      v-show="isOne"
+                      class="iconfont"
+                      :class="{
+                        'icon-up': isAsc,
+                        'icon-down': isDesc,
+                      }"
+                    ></span
                   ></a>
                 </li>
                 <li :class="{ active: isTwo }">
                   <a
-                    >价格 <span v-show="isTwo" class="iconfont icon-up"></span
+                    >价格
+                    <span
+                      v-show="isTwo"
+                      class="iconfont"
+                      :class="{
+                        'icon-up': isAsc,
+                        'icon-down': isDesc,
+                      }"
+                    ></span
                   ></a>
                 </li>
               </ul>
@@ -147,7 +163,7 @@
           category3Id: '',
           categoryName: '',
           keyword: '',
-          order: '2:desc',
+          order: '1:asc',
           pageNo: 1,
           pageSize: 10,
           props: [],
@@ -169,6 +185,14 @@
 
       isTwo() {
         return this.searchParams.order.indexOf('2') !== -1;
+      },
+
+      isAsc() {
+        return this.searchParams.order.indexOf('asc') !== -1;
+      },
+
+      isDesc() {
+        return this.searchParams.order.indexOf('desc') !== -1;
       },
     },
 

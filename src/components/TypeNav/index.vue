@@ -137,7 +137,11 @@
       }),
     },
 
-    mounted() {},
+    mounted() {
+      if (this.$route.path != '/home') {
+        this.show = false;
+      }
+    },
   };
 </script>
 
