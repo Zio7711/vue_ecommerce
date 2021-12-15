@@ -258,7 +258,8 @@
       },
 
       getPageNo(pageNo) {
-        console.log(pageNo);
+        this.searchParams.pageNo = pageNo;
+        this.getSearch();
       },
     },
     watch: {
