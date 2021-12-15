@@ -34,4 +34,7 @@ VueRouter.prototype.replace = function (location, resolve, reject) {
 
 export default new VueRouter({
   routes,
+  scrollBehavior() {
+    return { y: 0 };
+  },
 });
