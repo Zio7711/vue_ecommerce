@@ -1,8 +1,8 @@
 <template>
   <div class="pagination">
-    <button>1</button>
     <button>上一页</button>
-    <button>···</button>
+    <button v-if="startNumAndEndNum.start > 1">1</button>
+    <button v-if="startNumAndEndNum.start > 2">···</button>
 
     <!-- eslint-disable -->
     <button
@@ -14,9 +14,9 @@
     </button>
     <!-- eslint enable -->
 
-    <button>···</button>
-    <button>{{ totalPage }}</button>
-    <button>上一页</button>
+    <button v-if="startNumAndEndNum.end < totalPage - 1">···</button>
+    <button v-if="startNumAndEndNum.end < totalPage">{{ totalPage }}</button>
+    <button>下一页</button>
 
     <button style="margin-left: 30px">共 {{ total }} 条</button>
   </div>
