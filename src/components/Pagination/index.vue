@@ -4,11 +4,15 @@
     <button>上一页</button>
     <button>···</button>
 
-    <button>3</button>
-    <button>4</button>
-    <button>5</button>
-    <button>6</button>
-    <button>7</button>
+    <!-- eslint-disable -->
+    <button
+      v-for="(page, index) in startNumAndEndNum.end"
+      :key="index"
+      v-if="page >= startNumAndEndNum.start"
+    >
+      {{ page }}
+    </button>
+    <!-- eslint enable -->
 
     <button>···</button>
     <button>{{ totalPage }}</button>
