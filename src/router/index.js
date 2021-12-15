@@ -73,7 +73,7 @@ export default new VueRouter({
     },
 
     {
-      path: '/detail',
+      path: '/detail/:skuid',
       component: Detail,
       meta: {
         show: true,
