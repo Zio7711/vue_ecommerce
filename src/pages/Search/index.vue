@@ -121,6 +121,7 @@
             :pageSize="searchParams.pageSize"
             :total="total"
             :continues="5"
+            @getPageNo="getPageNo"
           />
         </div>
       </div>
@@ -142,7 +143,7 @@
           categoryName: '',
           keyword: '',
           order: '1:desc',
-          pageNo: 1,
+          pageNo: 15,
           pageSize: 3,
           props: [],
           trademark: '',
@@ -254,6 +255,10 @@
         this.searchParams.order = newOrder;
 
         this.getSearch();
+      },
+
+      getPageNo(pageNo) {
+        console.log(pageNo);
       },
     },
     watch: {
