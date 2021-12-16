@@ -12,13 +12,11 @@
 
 <script>
   import Swiper from 'swiper';
-  import { mapGetters } from 'vuex';
+
   export default {
     name: 'ImageList',
     props: ['skuImageList'],
-    computed: {
-      ...mapGetters(['spuSaleAttrList']),
-    },
+    computed: {},
 
     watch: {},
   };
