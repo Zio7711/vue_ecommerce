@@ -35,7 +35,7 @@
               {{ skuInfo.skuName }}
             </h3>
             <p class="news">
-              推荐选择下方[移动优惠购],手机套餐齐搞定,不用换号,每月还有花费返
+              {{ skuInfo.skuDesc }}
             </p>
             <div class="priceArea">
               <div class="priceArea1">
@@ -44,7 +44,7 @@
                 </div>
                 <div class="price">
                   <i>¥</i>
-                  <em>5299</em>
+                  <em>{{ skuInfo.price }}</em>
                   <span>降价通知</span>
                 </div>
                 <div class="remark">
@@ -367,7 +367,7 @@
     },
 
     computed: {
-      ...mapGetters(['categoryView', 'skuInfo']),
+      ...mapGetters(['categoryView', 'skuInfo', '']),
     },
     mounted() {
       this.$store.dispatch('getGoodsInfo', this.$route.params.skuid);
