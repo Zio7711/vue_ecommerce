@@ -22,7 +22,7 @@ requests.interceptors.response.use(
     return res.data;
   },
   (err) => {
-    return Promise.reject(new Error('request failed'));
+    return Promise.reject(new Error('request failed', err));
   }
 );
 

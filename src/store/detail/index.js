@@ -18,7 +18,11 @@ const actions = {
     }
   },
 };
-const getters = {};
+const getters = {
+  categoryView(state) {
+    return state.goodsInfo.categoryView;
+  },
+};
 
 export default {
   state,

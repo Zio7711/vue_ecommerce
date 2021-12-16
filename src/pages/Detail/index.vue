@@ -7,10 +7,17 @@
     <section class="con">
       <!-- 导航路径区域 -->
       <div class="conPoin">
-        <span>手机、数码、通讯</span>
-        <span>手机</span>
-        <span>Apple苹果</span>
-        <span>iphone 6S系类</span>
+        <span v-show="categoryView.category1Name">
+          {{ categoryView.category1Name }}
+        </span>
+
+        <span v-show="categoryView.category2Name">
+          {{ categoryView.category2Name }}
+        </span>
+
+        <span v-show="categoryView.category3Name">
+          {{ categoryView.category3Name }}
+        </span>
       </div>
       <!-- 主要内容区域 -->
       <div class="mainCon">
@@ -347,6 +354,7 @@
 </template>
 
 <script>
+  import { mapGetters } from 'vuex';
   import ImageList from './ImageList/ImageList';
   import Zoom from './Zoom/Zoom';
 
@@ -358,6 +366,9 @@
       Zoom,
     },
 
+    computed: {
+      ...mapGetters(['categoryView']),
+    },
     mounted() {
       this.$store.dispatch('getGoodsInfo', this.$route.params.skuid);
     },
