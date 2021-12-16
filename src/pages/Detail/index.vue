@@ -24,7 +24,7 @@
         <!-- 左侧放大镜区域 -->
         <div class="previewWrap">
           <!--放大镜效果-->
-          <Zoom />
+          <Zoom :skuImageList="skuInfo.skuImageList" />
           <!-- 小图列表 -->
           <ImageList />
         </div>

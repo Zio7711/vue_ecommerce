@@ -1,9 +1,9 @@
 <template>
   <div class="spec-preview">
-    <img src="../images/s1.png" />
+    <img :src="skuImageList[0].imgUrl" />
     <div class="event"></div>
     <div class="big">
-      <img src="../images/s1.png" />
+      <img :src="skuImageList[0].imgUrl" />
     </div>
     <div class="mask"></div>
   </div>
@@ -11,8 +11,9 @@
 
 <script>
   export default {
-    name: "Zoom",
-  }
+    name: 'Zoom',
+    props: ['skuImageList'],
+  };
 </script>
 
 <style lang="less">
@@ -68,8 +69,8 @@
       }
     }
 
-    .event:hover~.mask,
-    .event:hover~.big {
+    .event:hover ~ .mask,
+    .event:hover ~ .big {
       display: block;
     }
   }
