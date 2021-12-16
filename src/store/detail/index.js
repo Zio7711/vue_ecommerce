@@ -22,6 +22,10 @@ const getters = {
   categoryView(state) {
     return state.goodsInfo.categoryView || {};
   },
+
+  skuInfo(state) {
+    return state.goodsInfo.skuInfo || {};
+  },
 };
 
 export default {

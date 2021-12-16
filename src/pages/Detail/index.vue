@@ -32,7 +32,7 @@
         <div class="InfoWrap">
           <div class="goodsDetail">
             <h3 class="InfoName">
-              Apple iPhone 6s（A1700）64G玫瑰金色 移动通信电信4G手机
+              {{ skuInfo.skuName }}
             </h3>
             <p class="news">
               推荐选择下方[移动优惠购],手机套餐齐搞定,不用换号,每月还有花费返
@@ -367,7 +367,7 @@
     },
 
     computed: {
-      ...mapGetters(['categoryView']),
+      ...mapGetters(['categoryView', 'skuInfo']),
     },
     mounted() {
       this.$store.dispatch('getGoodsInfo', this.$route.params.skuid);
