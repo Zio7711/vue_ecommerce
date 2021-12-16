@@ -20,7 +20,7 @@ const actions = {
 };
 const getters = {
   categoryView(state) {
-    return state.goodsInfo.categoryView;
+    return state.goodsInfo.categoryView || {};
   },
 };
 
