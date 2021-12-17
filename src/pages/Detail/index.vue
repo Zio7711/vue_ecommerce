@@ -90,6 +90,7 @@
                   :class="{ active: spuSaleAttrValue.isChecked === '1' }"
                   v-for="spuSaleAttrValue in spuSaleAttr.spuSaleAttrValueList"
                   :key="spuSaleAttrValue.id"
+                  style="cursor: pointer"
                   @click="
                     changeActive(
                       spuSaleAttrValue,
@@ -115,7 +116,7 @@
                 >
               </div>
               <div class="add">
-                <a href="javascript:">加入购物车</a>
+                <a @click="addToCart">加入购物车</a>
               </div>
             </div>
           </div>
@@ -397,7 +398,15 @@
           this.skuNum = parseInt(value);
         }
       },
+
+      addToCart() {
+        this.$store.dispatch('addOrUpdateShopCart', {
+          skuId: this.$route.params.skuid,
+          skuNum: this.skuNum,
+        });
+      },
     },
+
     mounted() {
       this.$store.dispatch('getGoodsInfo', this.$route.params.skuid);
     },
