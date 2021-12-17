@@ -389,7 +389,14 @@
         spuSaleAttrValue.isChecked = '1';
       },
 
-      changeSkuNum(e) {},
+      changeSkuNum(e) {
+        let value = e.target.value * 1;
+        if (isNaN(value) || value < 1) {
+          this.skuNum = 1;
+        } else {
+          this.skuNum = parseInt(value);
+        }
+      },
     },
     mounted() {
       this.$store.dispatch('getGoodsInfo', this.$route.params.skuid);
