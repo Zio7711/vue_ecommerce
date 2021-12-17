@@ -405,6 +405,8 @@
             skuId: this.$route.params.skuid,
             skuNum: this.skuNum,
           });
+
+          this.$router.push({ name: 'addcartsuccess' });
         } catch (err) {
           alert(err.message);
         }

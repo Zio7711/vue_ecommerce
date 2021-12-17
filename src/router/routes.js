@@ -8,6 +8,7 @@ import AddCartSuccess from '@/pages/AddCartSuccess';
 export default [
   {
     path: '/addcartsuccess',
+    name: 'addcartsuccess',
     component: AddCartSuccess,
     meta: {
       show: true,
