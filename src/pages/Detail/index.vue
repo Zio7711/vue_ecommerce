@@ -103,9 +103,16 @@
             </div>
             <div class="cartWrap">
               <div class="controls">
-                <input autocomplete="off" class="itxt" />
-                <a href="javascript:" class="plus">+</a>
-                <a href="javascript:" class="mins">-</a>
+                <input
+                  autocomplete="off"
+                  class="itxt"
+                  v-model="skuNum"
+                  @change="changeSkuNum"
+                />
+                <a class="plus" @click="skuNum++">+</a>
+                <a class="mins" @click="skuNum > 1 ? skuNum-- : (skuNum = 1)"
+                  >-</a
+                >
               </div>
               <div class="add">
                 <a href="javascript:">加入购物车</a>
@@ -354,6 +361,12 @@
   export default {
     name: 'Detail',
 
+    data() {
+      return {
+        skuNum: 1,
+      };
+    },
+
     components: {
       ImageList,
       Zoom,
@@ -375,6 +388,8 @@
 
         spuSaleAttrValue.isChecked = '1';
       },
+
+      changeSkuNum(e) {},
     },
     mounted() {
       this.$store.dispatch('getGoodsInfo', this.$route.params.skuid);
@@ -572,6 +587,7 @@
                   position: absolute;
                   right: -8px;
                   border: 1px solid #ccc;
+                  cursor: pointer;
                 }
 
                 .mins {
