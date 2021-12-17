@@ -83,16 +83,19 @@
           <div class="choose">
             <div class="chooseArea">
               <div class="choosed"></div>
-              <dl
-                v-for="spuSaleAttr in spuSaleAttrList"
-                :key="spuSaleAttr.spuId"
-              >
+              <dl v-for="(spuSaleAttr, index) in spuSaleAttrList" :key="index">
                 <dt class="title">{{ spuSaleAttr.saleAttrName }}</dt>
                 <dd
                   changepirce="0"
                   :class="{ active: spuSaleAttrValue.isChecked === '1' }"
                   v-for="spuSaleAttrValue in spuSaleAttr.spuSaleAttrValueList"
                   :key="spuSaleAttrValue.id"
+                  @click="
+                    changeActive(
+                      spuSaleAttrValue,
+                      spuSaleAttr.spuSaleAttrValueList
+                    )
+                  "
                 >
                   {{ spuSaleAttrValue.saleAttrValueName }}
                 </dd>
@@ -361,6 +364,16 @@
 
       skuImageList() {
         return this.skuInfo.skuImageList || [];
+      },
+    },
+
+    methods: {
+      changeActive(spuSaleAttrValue, spuSaleAttrValueList) {
+        spuSaleAttrValueList.forEach((item) => {
+          item.isChecked = '0';
+        });
+
+        spuSaleAttrValue.isChecked = '1';
       },
     },
     mounted() {
