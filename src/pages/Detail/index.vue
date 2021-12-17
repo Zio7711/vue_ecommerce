@@ -406,7 +406,12 @@
             skuNum: this.skuNum,
           });
 
-          this.$router.push({ name: 'addcartsuccess' });
+          sessionStorage.setItem('SKUINFO', JSON.stringify(this.skuInfo));
+
+          this.$router.push({
+            name: 'addcartsuccess',
+            query: { skuNum: this.skuNum },
+          });
         } catch (err) {
           alert(err.message);
         }
