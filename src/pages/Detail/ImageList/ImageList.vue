@@ -1,5 +1,5 @@
 <template>
-  <div class="swiper-container">
+  <div class="swiper-container" ref="imageListSwiper">
     <div class="swiper-wrapper">
       <div class="swiper-slide" v-for="slide in skuImageList" :key="slide.id">
         <img :src="slide.imgUrl" />
@@ -18,7 +18,20 @@
     props: ['skuImageList'],
     computed: {},
 
-    watch: {},
+    watch: {
+      skuImageList() {
+        this.$nextTick(() => {
+          new Swiper(this.$refs.imageListSwiper, {
+            navigation: {
+              nextEl: '.swiper-button-next',
+              prevEl: '.swiper-button-prev',
+            },
+            slidesPerView: 3,
+            slidesPerGroup: 1,
+          });
+        });
+      },
+    },
   };
 </script>
 
@@ -43,11 +56,6 @@
         display: block;
 
         &.active {
-          border: 2px solid #f60;
-          padding: 1px;
-        }
-
-        &:hover {
           border: 2px solid #f60;
           padding: 1px;
         }
