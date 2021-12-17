@@ -3,7 +3,7 @@
     <img :src="imgObj.imgUrl" />
     <div class="event" @mousemove="handler"></div>
     <div class="big">
-      <img :src="imgObj.imgUrl" />
+      <img :src="imgObj.imgUrl" ref="big" />
     </div>
     <div class="mask" ref="mask"></div>
   </div>
@@ -32,6 +32,11 @@
 
         mask.style.left = left + 'px';
         mask.style.top = top + 'px';
+
+        let big = this.$refs.big;
+
+        big.style.left = -2 * left + 'px';
+        big.style.top = -2 * top + 'px';
       },
     },
 
