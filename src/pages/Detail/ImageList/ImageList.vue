@@ -34,6 +34,7 @@
     methods: {
       changeCurrentIndex(index) {
         this.currentIndex = index;
+        this.$bus.$emit('getIndex', this.currentIndex);
       },
     },
 
