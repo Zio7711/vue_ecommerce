@@ -399,11 +399,15 @@
         }
       },
 
-      addToCart() {
-        this.$store.dispatch('addOrUpdateShopCart', {
-          skuId: this.$route.params.skuid,
-          skuNum: this.skuNum,
-        });
+      async addToCart() {
+        try {
+          await this.$store.dispatch('addOrUpdateShopCart', {
+            skuId: this.$route.params.skuid,
+            skuNum: this.skuNum,
+          });
+        } catch (err) {
+          alert(err.message);
+        }
       },
     },
 

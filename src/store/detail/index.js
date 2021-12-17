@@ -18,13 +18,17 @@ const actions = {
     }
   },
 
-  async addOrUpdateShopCart({ commit }, { skuId, skuNum }) {
+  async addOrUpdateShopCart(_, { skuId, skuNum }) {
     let result = await reqAddOrUpdateShopCart(skuId, skuNum);
+
     if (result.code === 200) {
-      console.log(result);
+      return 'ok';
+    } else {
+      return Promise.reject(new Error('fail'));
     }
   },
 };
+
 const getters = {
   categoryView(state) {
     return state.goodsInfo.categoryView || {};
