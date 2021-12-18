@@ -8,4 +8,6 @@ export const getUUID = () => {
 
     localStorage.setItem('UUIDTOKEN', uuid_token);
   }
+
+  return uuid_token;
 };

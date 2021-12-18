@@ -1,5 +1,5 @@
 import { reqAddOrUpdateShopCart, reqGoodsInfo } from '@/api';
-import { getUUID } from 'utils/uuid_token';
+import { getUUID } from '@/utils/uuid_token';
 
 const state = {
   goodsInfo: {},
