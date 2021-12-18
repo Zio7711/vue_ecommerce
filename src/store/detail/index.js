@@ -1,7 +1,10 @@
 import { reqAddOrUpdateShopCart, reqGoodsInfo } from '@/api';
+import { getUUID } from 'utils/uuid_token';
 
 const state = {
   goodsInfo: {},
+
+  uuid_token: getUUID(),
 };
 
 const mutations = {
