@@ -1,8 +1,23 @@
-const state = {};
+import { reqCartList } from '@/api';
 
-const mutations = {};
+const state = {
+  cartList: {},
+};
 
-const actions = {};
+const mutations = {
+  CARTLIST(state, cartList) {
+    state.cartList = cartList;
+  },
+};
+
+const actions = {
+  async getCartList({ commit }) {
+    let result = await reqCartList();
+    if (result.code === 200) {
+      commit('CARTLIST', result.data);
+    }
+  },
+};
 
 const getters = {};
 
