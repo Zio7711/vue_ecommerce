@@ -41,7 +41,7 @@
             <a href="javascript:void(0)" class="plus">+</a>
           </li>
           <li class="cart-list-con6">
-            <span class="sum">399</span>
+            <span class="sum">{{ cart.skuPrice * cart.skuNum }}</span>
           </li>
           <li class="cart-list-con7">
             <a href="#none" class="sindelet">删除</a>
@@ -65,7 +65,7 @@
         <div class="chosed">已选择 <span>0</span>件商品</div>
         <div class="sumprice">
           <em>总价（不含运费） ：</em>
-          <i class="summoney">0</i>
+          <i class="summoney">{{ totalPrice }}</i>
         </div>
         <div class="sumbtn">
           <a class="sum-btn" href="###" target="_blank">结算</a>
@@ -89,6 +89,14 @@
 
       cartInfoList() {
         return this.cartList.cartInfoList || [];
+      },
+
+      totalPrice() {
+        let sum = 0;
+        this.cartInfoList.forEach((cartInfo) => {
+          sum += cartInfo.skuNum * cartInfo.skuPrice;
+        });
+        return sum;
       },
     },
     mounted() {
