@@ -53,7 +53,7 @@
     </div>
     <div class="cart-tool">
       <div class="select-all">
-        <input class="chooseAll" type="checkbox" />
+        <input class="chooseAll" type="checkbox" :checked="isAllChecked" />
         <span>全选</span>
       </div>
       <div class="option">
@@ -97,6 +97,10 @@
           sum += cartInfo.skuNum * cartInfo.skuPrice;
         });
         return sum;
+      },
+
+      isAllChecked() {
+        return this.cartInfoList.every((item) => item.isChecked === 1);
       },
     },
     mounted() {
