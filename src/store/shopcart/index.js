@@ -1,7 +1,7 @@
 import { reqCartList } from '@/api';
 
 const state = {
-  cartList: {},
+  cartList: [],
 };
 
 const mutations = {
@@ -16,11 +16,14 @@ const actions = {
     if (result.code === 200) {
       commit('CARTLIST', result.data);
     }
-    console.log(result);
   },
 };
 
-const getters = {};
+const getters = {
+  cartList(state) {
+    return state.cartList[0] || {};
+  },
+};
 
 export default {
   state,
