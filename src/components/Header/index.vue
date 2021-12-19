@@ -53,6 +53,7 @@
     name: '',
     data() {
       return {
+        //responding data, for collecting input element value
         keyword: '',
       };
     },
