@@ -58,6 +58,7 @@
       };
     },
     methods: {
+      //search button function
       goSearch() {
         //pass params when routing
         let location = {
