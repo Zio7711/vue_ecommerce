@@ -57,3 +57,10 @@ export const reqDeleteCartById = (skuId) => {
     method: 'delete',
   });
 };
+
+export const reqUpdateCheckedById = (skuId, isChecked) => {
+  return requests({
+    url: `/cart/checkCart/${skuId}/${isChecked}`,
+    method: 'get',
+  });
+};
