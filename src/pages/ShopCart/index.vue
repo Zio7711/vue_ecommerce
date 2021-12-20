@@ -85,16 +85,26 @@
         this.$store.dispatch('getCartList');
       },
 
-      handler(type, disNumber, cart) {
+      async handler(type, disNum, cart) {
         switch (type) {
           case 'add':
             disNum = 1;
             break;
 
           case 'minus':
-            disNum = -1;
+            disNum = cart.skuNum > 1 ? -1 : 0;
+            break;
         }
-        // this.$store.dispatch();
+        try {
+          await this.$store.dispatch('addOrUpdateShopCart', {
+            skuId: cart.skuId,
+            skuNum: disNum,
+          });
+
+          this.getData();
+        } catch (error) {
+          console.log(error);
+        }
       },
     },
     computed: {
