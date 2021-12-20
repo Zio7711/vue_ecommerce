@@ -37,7 +37,7 @@
               :value="cart.skuNum"
               minnum="1"
               class="itxt"
-              @change="handler('change', $event.target.value, cart)"
+              @change="handler('change', $event.target.value * 1, cart)"
             />
             <a class="plus" @click="handler('add', 1, cart)">+</a>
           </li>
@@ -94,6 +94,13 @@
           case 'minus':
             disNum = cart.skuNum > 1 ? -1 : 0;
             break;
+
+          case 'change':
+            if (isNaN(disNum) || disNum < 1) {
+              disNum = 0;
+            } else {
+              disNum = parseInt(disNum) - cart.skuNum;
+            }
         }
         try {
           await this.$store.dispatch('addOrUpdateShopCart', {
