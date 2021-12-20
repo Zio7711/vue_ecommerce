@@ -78,6 +78,8 @@
 
 <script>
   import { mapGetters } from 'vuex';
+  import throttle from 'lodash/throttle';
+
   export default {
     name: 'ShopCart',
     methods: {
@@ -85,7 +87,7 @@
         this.$store.dispatch('getCartList');
       },
 
-      async handler(type, disNum, cart) {
+      handler: throttle(async function (type, disNum, cart) {
         switch (type) {
           case 'add':
             disNum = 1;
@@ -112,7 +114,7 @@
         } catch (error) {
           console.log(error);
         }
-      },
+      }, 1000),
 
       deleteCartById(cart) {
         try {
