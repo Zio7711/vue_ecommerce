@@ -50,3 +50,10 @@ export const reqCartList = () => {
     method: 'get',
   });
 };
+
+export const reqDeleteCartById = () => {
+  return requests({
+    url: `/cart/deleteCart/${skuId}`,
+    method: 'delete',
+  });
+};
