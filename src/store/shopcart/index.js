@@ -18,7 +18,7 @@ const actions = {
     }
   },
 
-  deleteCartListBySkuId({ commit }, skuId) {
+  async deleteCartListBySkuId({ commit }, skuId) {
     let result = await reqDeleteCartById(skuId);
     if (result.code === 200) {
       return 'ok';

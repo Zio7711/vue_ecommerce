@@ -51,7 +51,7 @@ export const reqCartList = () => {
   });
 };
 
-export const reqDeleteCartById = () => {
+export const reqDeleteCartById = (skuId) => {
   return requests({
     url: `/cart/deleteCart/${skuId}`,
     method: 'delete',
