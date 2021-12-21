@@ -153,10 +153,15 @@
           alert(error.message);
         }
       },
-      updateAllCartChecked(event) {
-        let isChecked = event.target.checked ? '1' : '0';
 
-        this.$store.dispatch('updateAllCartIsChecked', isChecked);
+      async updateAllCartChecked(event) {
+        let isChecked = event.target.checked ? '1' : '0';
+        try {
+          await this.$store.dispatch('updateAllCartIsChecked', isChecked);
+          this.getData();
+        } catch (error) {
+          alert(error.message);
+        }
       },
     },
     computed: {
