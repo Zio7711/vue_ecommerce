@@ -59,17 +59,17 @@
         <span>全选</span>
       </div>
       <div class="option">
-        <a href="#none">删除选中的商品</a>
-        <a href="#none">移到我的关注</a>
-        <a href="#none">清除下柜商品</a>
+        <a @click="deleteAllCheckedCart">删除选中的商品</a>
+        <a>移到我的关注</a>
+        <a>清除下柜商品</a>
       </div>
       <div class="money-box">
         <div class="chosen">已选择 <span>0</span>件商品</div>
-        <div class="sumprice">
+        <div class="sumPrice">
           <em>总价（不含运费） ：</em>
-          <i class="summoney">{{ totalPrice }}</i>
+          <i class="sumMoney">{{ totalPrice }}</i>
         </div>
-        <div class="sumbtn">
+        <div class="sumBtn">
           <a class="sum-btn" href="###" target="_blank">结算</a>
         </div>
       </div>
@@ -138,6 +138,10 @@
         } catch (error) {
           alert(error.message);
         }
+      },
+
+      deleteAllCheckedCart() {
+        this.$store.dispatch('deleteAllCheckedCart');
       },
     },
     computed: {
@@ -340,19 +344,19 @@
           padding: 0 10px;
         }
 
-        .sumprice {
+        .sumPrice {
           width: 200px;
           line-height: 22px;
           float: left;
           padding: 0 10px;
 
-          .summoney {
+          .sumMoney {
             color: #c81623;
             font-size: 16px;
           }
         }
 
-        .sumbtn {
+        .sumBtn {
           float: right;
 
           a {
