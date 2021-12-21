@@ -58,7 +58,7 @@
         <input
           class="chooseAll"
           type="checkbox"
-          :checked="isAllChecked"
+          :checked="isAllChecked && cartInfoList.length > 0"
           @change="updateAllCartChecked($event)"
         />
         <span>全选</span>
