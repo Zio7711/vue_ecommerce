@@ -49,6 +49,8 @@ const actions = {
 
     return Promise.all(PromiseAll);
   },
+
+  updateAllCartIsChecked() {},
 };
 
 const getters = {

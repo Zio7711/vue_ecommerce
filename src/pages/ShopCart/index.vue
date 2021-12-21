@@ -55,7 +55,12 @@
     </div>
     <div class="cart-tool">
       <div class="select-all">
-        <input class="chooseAll" type="checkbox" :checked="isAllChecked" />
+        <input
+          class="chooseAll"
+          type="checkbox"
+          :checked="isAllChecked"
+          @change="updateAllCartChecked"
+        />
         <span>全选</span>
       </div>
       <div class="option">
@@ -166,6 +171,12 @@
 
       isAllChecked() {
         return this.cartInfoList.every((item) => item.isChecked === 1);
+      },
+
+      updateAllCartChecked(event) {
+        let isChecked = event.target.checked ? '1' : '0';
+
+        this.$store.dispatch('updateAllCartIsChecked', isChecked);
       },
     },
     mounted() {
