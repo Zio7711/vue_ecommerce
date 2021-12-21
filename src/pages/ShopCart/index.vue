@@ -140,8 +140,13 @@
         }
       },
 
-      deleteAllCheckedCart() {
-        this.$store.dispatch('deleteAllCheckedCart');
+      async deleteAllCheckedCart() {
+        try {
+          await this.$store.dispatch('deleteAllCheckedCart');
+          this.getData();
+        } catch (error) {
+          alert(error.message);
+        }
       },
     },
     computed: {
