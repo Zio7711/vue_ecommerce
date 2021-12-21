@@ -59,7 +59,7 @@
           class="chooseAll"
           type="checkbox"
           :checked="isAllChecked"
-          @change="updateAllCartChecked"
+          @change="updateAllCartChecked($event)"
         />
         <span>全选</span>
       </div>
@@ -153,6 +153,11 @@
           alert(error.message);
         }
       },
+      updateAllCartChecked(event) {
+        let isChecked = event.target.checked ? '1' : '0';
+
+        this.$store.dispatch('updateAllCartIsChecked', isChecked);
+      },
     },
     computed: {
       ...mapGetters(['cartList']),
@@ -171,12 +176,6 @@
 
       isAllChecked() {
         return this.cartInfoList.every((item) => item.isChecked === 1);
-      },
-
-      updateAllCartChecked(event) {
-        let isChecked = event.target.checked ? '1' : '0';
-
-        this.$store.dispatch('updateAllCartIsChecked', isChecked);
       },
     },
     mounted() {

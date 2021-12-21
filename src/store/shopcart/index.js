@@ -50,7 +50,18 @@ const actions = {
     return Promise.all(PromiseAll);
   },
 
-  updateAllCartIsChecked() {},
+  updateAllCartIsChecked({ dispatch, state }, isChecked) {
+    let promiseAll = [];
+    state.cartList[0].cartInfoList.forEach((item) => {
+      let promise = dispatch('updateCheckedById', {
+        skuId: item.skuId,
+        isChecked,
+      });
+      promiseAll.push(promise);
+    });
+
+    return Promise.all(promiseAll);
+  },
 };
 
 const getters = {
