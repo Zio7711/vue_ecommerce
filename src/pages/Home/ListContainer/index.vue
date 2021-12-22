@@ -11,8 +11,8 @@
             <em class="fl">尚品汇快报</em>
             <span class="fr tip">更多 ></span>
           </h4>
-          <div class="clearix"></div>
-          <ul class="news-list unstyled">
+          <div class="clearIX"></div>
+          <ul class="news-list un-styled">
             <li><span class="bold">[特惠]</span>备战开学季 全民半价购数码</li>
             <li><span class="bold">[公告]</span>备战开学季 全民半价购数码</li>
             <li><span class="bold">[特惠]</span>备战开学季 全民半价购数码</li>
@@ -20,7 +20,7 @@
             <li><span class="bold">[特惠]</span>备战开学季 全民半价购数码</li>
           </ul>
         </div>
-        <ul class="lifeservices">
+        <ul class="lifeServices">
           <li class="life-item">
             <i class="list-item"></i>
             <span class="service-intro">话费</span>
@@ -152,7 +152,7 @@
           }
         }
 
-        .lifeservices {
+        .lifeServices {
           border-right: 1px solid #e4e4e4;
           overflow: hidden;
           display: flex;
