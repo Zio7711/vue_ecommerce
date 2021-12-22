@@ -6,7 +6,7 @@
     <!-- 主要内容区域 -->
     <section class="con">
       <!-- 导航路径区域 -->
-      <div class="conPoin">
+      <div class="conPoint">
         <span v-show="categoryView.category1Name">
           {{ categoryView.category1Name }}
         </span>
@@ -82,11 +82,11 @@
 
           <div class="choose">
             <div class="chooseArea">
-              <div class="choosed"></div>
+              <div class="chosen"></div>
               <dl v-for="(spuSaleAttr, index) in spuSaleAttrList" :key="index">
                 <dt class="title">{{ spuSaleAttr.saleAttrName }}</dt>
                 <dd
-                  changepirce="0"
+                  changePrice="0"
                   :class="{ active: spuSaleAttrValue.isChecked === '1' }"
                   v-for="spuSaleAttrValue in spuSaleAttr.spuSaleAttrValueList"
                   :key="spuSaleAttrValue.id"
@@ -127,7 +127,7 @@
     <!-- 内容详情页 -->
     <section class="product-detail">
       <aside class="aside">
-        <div class="tabWraped">
+        <div class="tabWrapped">
           <h4 class="active">相关分类</h4>
           <h4>推荐品牌</h4>
         </div>
@@ -289,12 +289,12 @@
               <div class="num">已选购0件商品</div>
               <div class="price-tit">套餐价</div>
               <div class="price">￥5299</div>
-              <button class="addshopcar">加入购物车</button>
+              <button class="addShopcart">加入购物车</button>
             </div>
           </div>
         </div>
         <div class="intro">
-          <ul class="tab-wraped">
+          <ul class="tab-wrapped">
             <li class="active">
               <a href="###"> 商品介绍 </a>
             </li>
@@ -430,7 +430,7 @@
       width: 1200px;
       margin: 15px auto 0;
 
-      .conPoin {
+      .conPoint {
         padding: 9px 15px 9px 0;
 
         & > span + span:before {
@@ -657,7 +657,7 @@
         float: left;
         border: 1px solid #ccc;
 
-        .tabWraped {
+        .tabWrapped {
           height: 40px;
 
           h4 {
@@ -842,7 +842,7 @@
                 margin-bottom: 10px;
               }
 
-              .addshopcar {
+              .addShopcart {
                 background-color: #e1251b;
                 border: 1px solid #e1251b;
                 padding: 10px 25px;
@@ -856,7 +856,7 @@
         }
 
         .intro {
-          .tab-wraped {
+          .tab-wrapped {
             background: #ededed;
             // border: 1px solid #ddd;
             overflow: hidden;
