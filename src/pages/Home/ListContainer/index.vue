@@ -93,6 +93,8 @@
     },
 
     mounted() {
+      // mounted: when component has mounted, the DOM elements have already been there
+      // why does not the Swiper not work here: the DOM structure has not been generated yet
       this.$store.dispatch('getBannerList');
     },
   };
