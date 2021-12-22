@@ -364,6 +364,7 @@
 
     data() {
       return {
+        // item number to be purchased
         skuNum: 1,
       };
     },
@@ -375,26 +376,34 @@
 
     computed: {
       ...mapGetters(['categoryView', 'skuInfo', 'spuSaleAttrList']),
-
+      // passing data to child component
       skuImageList() {
+        // if there is no data coming back, the skuInfo object will be an empty object
         return this.skuInfo.skuImageList || [];
       },
     },
 
     methods: {
+      // product sale property will be highlighted if it's checked
       changeActive(spuSaleAttrValue, spuSaleAttrValueList) {
+        // looping through all value list, if isChecked property is 0, then it won't be highlighted
         spuSaleAttrValueList.forEach((item) => {
           item.isChecked = '0';
         });
 
+        // the property that has been clicked will be changed to 1
         spuSaleAttrValue.isChecked = '1';
       },
 
+      // form element changing item number
       changeSkuNum(e) {
+        // user's input * 1
         let value = e.target.value * 1;
+        // if user's input is invalid(showing NaN or less than 1)
         if (isNaN(value) || value < 1) {
           this.skuNum = 1;
         } else {
+          // the input is valid (more than 1 and is integer not floating number)
           this.skuNum = parseInt(value);
         }
       },
@@ -419,6 +428,7 @@
     },
 
     mounted() {
+      // dispatch action for getting product details info data
       this.$store.dispatch('getGoodsInfo', this.$route.params.skuid);
     },
   };
