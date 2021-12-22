@@ -1,16 +1,19 @@
 <template>
   <div>
+    <!-- global component leveling menu -->
     <TypeNav />
     <ListContainer />
     <Recommend />
     <Rank />
     <Likes />
+    <!-- Floor component: it does not send any request in it, data is passed by the father component -->
     <Floor v-for="floor in floorList" :key="floor.id" :list="floor" />
     <Brand />
   </div>
 </template>
 
 <script>
+  // none-routing component usage: define, register, usage
   import ListContainer from '@/pages/Home/ListContainer';
   import Recommend from '@/pages/Home/Recommend';
   import Rank from '@/pages/Home/Rank';
@@ -35,6 +38,7 @@
       }),
     },
     mounted() {
+      // dispatch action for getting data for floor component
       this.$store.dispatch('getFloorList');
     },
   };
