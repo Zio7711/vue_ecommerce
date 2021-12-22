@@ -18,7 +18,7 @@
       <div class="tab-content">
         <div class="tab-pane">
           <div class="floor-1">
-            <div class="blockgary">
+            <div class="blockGary">
               <ul class="jd-list">
                 <li v-for="(keyword, index) in list.keywords" :key="index">
                   {{ keyword }}
@@ -27,14 +27,15 @@
               <img :src="list.imgUrl" />
             </div>
             <div class="floorBanner">
+              <!-- place for carousel component  -->
               <Carousel :list="list.carouselList" />
             </div>
             <div class="split">
               <span class="floor-x-line"></span>
-              <div class="floor-conver-pit">
+              <div class="floor-convert-pit">
                 <img :src="list.recommendList[0]" />
               </div>
-              <div class="floor-conver-pit">
+              <div class="floor-convert-pit">
                 <img :src="list.recommendList[1]" />
               </div>
             </div>
@@ -43,10 +44,10 @@
             </div>
             <div class="split">
               <span class="floor-x-line"></span>
-              <div class="floor-conver-pit">
+              <div class="floor-convert-pit">
                 <img :src="list.recommendList[2]" />
               </div>
-              <div class="floor-conver-pit">
+              <div class="floor-convert-pit">
                 <img :src="list.recommendList[3]" />
               </div>
             </div>
@@ -131,7 +132,7 @@
             height: 360px;
             display: flex;
 
-            .blockgary {
+            .blockGary {
               width: 210px;
               height: 100%;
               background: #f7f7f7;
@@ -174,7 +175,7 @@
                 top: 180px;
               }
 
-              .floor-conver-pit {
+              .floor-convert-pit {
                 width: 100%;
                 height: 50%;
 
