@@ -408,12 +408,21 @@
         }
       },
 
+      // add to shopping cart
       async addToCart() {
+        // 1. when clicking Add to Shopping Cart button, the first thing is to send request to server with parameters, informing server which product is gonna be adding to the cart
+        // this.$store.dispatch('addOrUpdateShopCart') is literally the same as invoking the function addOrUpdateShopCart in the VueX store
+        // 2. We need to know if the request is successful or failed. If the request succeed, redirecting routes, if not, need to send an alert
         try {
+          // if succeeds
           await this.$store.dispatch('addOrUpdateShopCart', {
             skuId: this.$route.params.skuid,
             skuNum: this.skuNum,
           });
+          // 3. redirect routes
+          // 4. when redirect, passing parameters to the next route
+          // We can use query in the URL to pass info for some simple data like skuNum4
+          // localStorage | sessionStorage usually stores strings
 
           sessionStorage.setItem('SKUINFO', JSON.stringify(this.skuInfo));
 
@@ -422,6 +431,7 @@
             query: { skuNum: this.skuNum },
           });
         } catch (err) {
+          // if fails
           alert(err.message);
         }
       },
