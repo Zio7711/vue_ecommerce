@@ -16,8 +16,8 @@
             </p>
           </div>
         </div>
-        <div class="right-gocart">
-          <router-link class="sui-btn btn-xlarge" :to="`/detail/${skuInfo.id}`">
+        <div class="right-goCart">
+          <router-link class="sui-btn btn-xl" :to="`/detail/${skuInfo.id}`">
             查看商品详情
           </router-link>
 
@@ -102,7 +102,7 @@
           }
         }
 
-        .right-gocart {
+        .right-goCart {
           float: right;
 
           a {
