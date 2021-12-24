@@ -64,3 +64,10 @@ export const reqUpdateCheckedById = (skuId, isChecked) => {
     method: 'get',
   });
 };
+
+export const reqGetCode = (phone) => {
+  return requests({
+    url: `/user/passport/sendCode/${phone}`,
+    method: 'get',
+  });
+};
