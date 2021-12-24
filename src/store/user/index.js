@@ -1,4 +1,4 @@
-import { reqGetCode } from '@/api';
+import { reqGetCode, reqUserRegister } from '@/api';
 
 const state = {
   code: '',
@@ -18,6 +18,15 @@ const actions = {
       return 'ok';
     } else {
       return Promise.reject(new Error('fail'));
+    }
+  },
+
+  async userRegister(_, data) {
+    let result = await reqUserRegister(data);
+    if (result.code === 200) {
+      return 'ok';
+    } else {
+      return Promise.reject(new Error(result.message));
     }
   },
 };

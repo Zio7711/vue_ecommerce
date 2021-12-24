@@ -71,3 +71,11 @@ export const reqGetCode = (phone) => {
     method: 'get',
   });
 };
+
+export const reqUserRegister = (data) => {
+  return requests({
+    url: '/user/passport/register',
+    data,
+    method: 'post',
+  });
+};
