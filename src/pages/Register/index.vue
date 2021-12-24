@@ -2,33 +2,36 @@
   <div class="register-container">
     <!-- 注册内容 -->
     <div class="register">
-      <h3>注册新用户
-        <span class="go">我有账号，去 <a href="login.html" target="_blank">登陆</a>
+      <h3>
+        注册新用户
+        <span class="go"
+          >我有账号，去 <a href="login.html" target="_blank">登陆</a>
         </span>
       </h3>
       <div class="content">
         <label>手机号:</label>
-        <input type="text" placeholder="请输入你的手机号">
+        <input type="text" placeholder="请输入你的手机号" v-model="phone" />
         <span class="error-msg">错误提示信息</span>
       </div>
       <div class="content">
         <label>验证码:</label>
-        <input type="text" placeholder="请输入验证码">
-        <img ref="code" src="http://182.92.128.115/api/user/passport/code" alt="code">
+        <input type="text" placeholder="请输入验证码" v-model="code" />
+        <button style="width: 100px; height: 38px">获取验证码</button>
+
         <span class="error-msg">错误提示信息</span>
       </div>
       <div class="content">
         <label>登录密码:</label>
-        <input type="text" placeholder="请输入你的登录密码">
+        <input type="text" placeholder="请输入你的登录密码" />
         <span class="error-msg">错误提示信息</span>
       </div>
       <div class="content">
         <label>确认密码:</label>
-        <input type="text" placeholder="请输入确认密码">
+        <input type="text" placeholder="请输入确认密码" />
         <span class="error-msg">错误提示信息</span>
       </div>
       <div class="controls">
-        <input name="m1" type="checkbox">
+        <input name="m1" type="checkbox" />
         <span>同意协议并注册《尚品汇用户协议》</span>
         <span class="error-msg">错误提示信息</span>
       </div>
@@ -50,16 +53,23 @@
         <li>尚品汇社区</li>
       </ul>
       <div class="address">地址：北京市昌平区宏福科技园综合楼6层</div>
-      <div class="beian">京ICP备19006430号
-      </div>
+      <div class="beian">京ICP备19006430号</div>
     </div>
   </div>
 </template>
 
 <script>
   export default {
-    name: 'Register'
-  }
+    name: 'Register',
+
+    data() {
+      return {
+        // collecting form data: phone number
+        phone: null,
+        code: null,
+      };
+    },
+  };
 </script>
 
 <style lang="less" scoped>
