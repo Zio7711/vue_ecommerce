@@ -3,7 +3,7 @@
     <!-- 登录 -->
     <div class="login-wrap">
       <div class="login">
-        <div class="loginform">
+        <div class="loginForm">
           <ul class="tab clearFix">
             <li>
               <a href="##" style="border-right: 0">扫描登录</a>
@@ -61,7 +61,7 @@
         <li>尚品汇社区</li>
       </ul>
       <div class="address">地址：北京市昌平区宏福科技园综合楼6层</div>
-      <div class="beian">京ICP备19006430号</div>
+      <div class="bei">京ICP备19006430号</div>
     </div>
   </div>
 </template>
@@ -85,7 +85,7 @@
         background: url(./images/loginbg.png) no-repeat;
       }
 
-      .loginform {
+      .loginForm {
         width: 420px;
         height: 406px;
         box-sizing: border-box;
