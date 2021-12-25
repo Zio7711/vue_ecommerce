@@ -3,7 +3,6 @@ import { reqGetCode, reqUserInfo, reqUserLogin, reqUserRegister } from '@/api';
 const state = {
   code: '',
   token: '',
-
   userInfo: {},
 };
 
