@@ -79,3 +79,11 @@ export const reqUserRegister = (data) => {
     method: 'post',
   });
 };
+
+export const reqUserLogin = (data) => {
+  return requests({
+    url: '/user/passport/login',
+    data,
+    method: 'post',
+  });
+};
