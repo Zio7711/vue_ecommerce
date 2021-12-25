@@ -1,4 +1,4 @@
-import { reqGetCode, reqUserLogin, reqUserRegister } from '@/api';
+import { reqGetCode, reqUserInfo, reqUserLogin, reqUserRegister } from '@/api';
 
 const state = {
   code: '',
@@ -42,6 +42,11 @@ const actions = {
     } else {
       return Promise.reject(new Error('fail'));
     }
+  },
+
+  async getUserInfo() {
+    let result = await reqUserInfo();
+    console.log(result);
   },
 };
 

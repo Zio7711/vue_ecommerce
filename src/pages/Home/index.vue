@@ -40,6 +40,8 @@
     mounted() {
       // dispatch action for getting data for floor component
       this.$store.dispatch('getFloorList');
+
+      this.$store.dispatch('getUserInfo');
     },
   };
 </script>
