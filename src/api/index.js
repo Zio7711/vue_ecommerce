@@ -87,3 +87,10 @@ export const reqUserLogin = (data) => {
     method: 'post',
   });
 };
+
+export const reqUserInfo = () => {
+  return requests({
+    url: '/user/passport/auth/getUserInfo',
+    method: 'get',
+  });
+};
