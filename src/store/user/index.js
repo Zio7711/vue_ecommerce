@@ -1,4 +1,4 @@
-import { reqGetCode, reqUserRegister } from '@/api';
+import { reqGetCode, reqUserLogin, reqUserRegister } from '@/api';
 
 const state = {
   code: '',
@@ -28,6 +28,11 @@ const actions = {
     } else {
       return Promise.reject(new Error(result.message));
     }
+  },
+
+  async userLogin({ commit }, data) {
+    let result = await reqUserLogin(data);
+    console.log(result);
   },
 };
 

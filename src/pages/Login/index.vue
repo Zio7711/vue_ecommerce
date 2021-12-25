@@ -14,7 +14,7 @@
           </ul>
 
           <div class="content">
-            <form action="##">
+            <form>
               <div class="input-text clearFix">
                 <span></span>
                 <input
@@ -38,7 +38,9 @@
                 </label>
                 <span class="forget">忘记密码？</span>
               </div>
-              <button class="btn">登&nbsp;&nbsp;录</button>
+              <button class="btn" @click.prevent="userLogin">
+                登&nbsp;&nbsp;录
+              </button>
             </form>
 
             <div class="call clearFix">
@@ -83,6 +85,15 @@
         phone: '',
         password: '',
       };
+    },
+
+    methods: {
+      userLogin() {
+        const { phone, password } = this;
+        phone &&
+          password &&
+          this.$store.dispatch('userLogin', { phone, password });
+      },
     },
   };
 </script>
