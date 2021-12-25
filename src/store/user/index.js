@@ -2,11 +2,16 @@ import { reqGetCode, reqUserLogin, reqUserRegister } from '@/api';
 
 const state = {
   code: '',
+  token: '',
 };
 
 const mutations = {
   GETCODE(state, code) {
     state.code = code;
+  },
+
+  USERLOGIN(state, token) {
+    state.token = token;
   },
 };
 
@@ -32,7 +37,11 @@ const actions = {
 
   async userLogin({ commit }, data) {
     let result = await reqUserLogin(data);
-    console.log(result);
+    if (result.code === 200) {
+      commit('USERLOGIN', result.data.token);
+    } else {
+      return Promise.reject(new Error('fail'));
+    }
   },
 };
 
