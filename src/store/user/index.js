@@ -3,6 +3,8 @@ import { reqGetCode, reqUserInfo, reqUserLogin, reqUserRegister } from '@/api';
 const state = {
   code: '',
   token: '',
+
+  userInfo: {},
 };
 
 const mutations = {
@@ -12,6 +14,10 @@ const mutations = {
 
   USERLOGIN(state, token) {
     state.token = token;
+  },
+
+  GETUSERINFO(state, userInfo) {
+    state.userInfo = userInfo;
   },
 };
 
@@ -44,9 +50,15 @@ const actions = {
     }
   },
 
-  async getUserInfo() {
+  async getUserInfo({ commit }) {
     let result = await reqUserInfo();
-    console.log(result);
+
+    if (result.code === 200) {
+      commit('GETUSERINFO', result.data);
+      return 'ok';
+    } else {
+      return Promise.reject(new Error('fail'));
+    }
   },
 };
 
