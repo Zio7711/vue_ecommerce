@@ -94,3 +94,10 @@ export const reqUserInfo = () => {
     method: 'get',
   });
 };
+
+export const reqLogout = () => {
+  return requests({
+    url: '/user/passport/logout',
+    method: 'get',
+  });
+};

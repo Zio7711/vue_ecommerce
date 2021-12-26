@@ -15,7 +15,7 @@
           <!-- Login status -->
           <p v-else>
             <a>{{ userName }}</a>
-            <a class="register">退出登录</a>
+            <a class="register" @click="logout">退出登录</a>
           </p>
         </div>
         <div class="typeList">
@@ -77,6 +77,8 @@
           this.$router.push(location);
         }
       },
+
+      logout() {},
     },
 
     computed: {
