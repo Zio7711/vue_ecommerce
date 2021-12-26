@@ -1,4 +1,5 @@
 import { reqGetCode, reqUserInfo, reqUserLogin, reqUserRegister } from '@/api';
+import { setToken } from '@/utils/token';
 
 const state = {
   code: '',
@@ -44,6 +45,10 @@ const actions = {
     let result = await reqUserLogin(data);
     if (result.code === 200) {
       commit('USERLOGIN', result.data.token);
+
+      setToken(result.data.token);
+
+      return 'ok';
     } else {
       return Promise.reject(new Error('fail'));
     }

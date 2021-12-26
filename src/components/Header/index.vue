@@ -42,11 +42,11 @@
           <input
             type="text"
             id="autocomplete"
-            class="input-error input-xxlarge"
+            class="input-error input-xxLarge"
             v-model="keyword"
           />
 
-          <button class="sui-btn btn-xlarge btn-danger" type="submit">
+          <button class="sui-btn btn-xLarge btn-danger" type="submit">
             搜索
           </button>
         </form>
