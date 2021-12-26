@@ -81,6 +81,7 @@ const actions = {
 
     if (result.code === 200) {
       commit('CLEAR');
+      return 'ok';
     } else {
       return Promise.reject(new Error('fail'));
     }

@@ -78,7 +78,14 @@
         }
       },
 
-      logout() {},
+      logout() {
+        try {
+          this.$store.dispatch('userLogout');
+          this.$router.push('/home');
+        } catch (error) {
+          alert(error.message);
+        }
+      },
     },
 
     computed: {
