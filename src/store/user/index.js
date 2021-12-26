@@ -1,9 +1,9 @@
 import { reqGetCode, reqUserInfo, reqUserLogin, reqUserRegister } from '@/api';
-import { setToken } from '@/utils/token';
+import { getToken, setToken } from '@/utils/token';
 
 const state = {
   code: '',
-  token: localStorage.getItem('TOKEN'),
+  token: getToken(),
   userInfo: {},
 };
 
