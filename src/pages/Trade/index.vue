@@ -127,6 +127,10 @@
 <script>
   export default {
     name: 'Trade',
+
+    mounted() {
+      this.$store.dispatch('getUserAddress');
+    },
   };
 </script>
 

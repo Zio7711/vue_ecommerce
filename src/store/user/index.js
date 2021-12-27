@@ -67,7 +67,6 @@ const actions = {
 
   async getUserInfo({ commit }) {
     let result = await reqUserInfo();
-    console.log(result);
     if (result.code === 200) {
       commit('GETUSERINFO', result.data);
       return 'ok';
