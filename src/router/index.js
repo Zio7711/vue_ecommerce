@@ -45,23 +45,25 @@ router.beforeEach(async (to, from, next) => {
   // from: the address you redirect from
   // next: passing function
 
-  // next();
-
   let token = store.state.user.token;
   let name = store.state.user.userInfo.name;
 
   if (token) {
+    // if user is logged in, and still want to go to login page: FORBIDDEN, redirect to home page
     if (to.path === '/login') {
       next('/');
     } else {
       // go to other page expect login
+      // if userInfo exists, proceed
       if (name) {
         next();
       } else {
         try {
+          // if token exist but there is no userInfo, re-sending request to get userInfo
           await store.dispatch('getUserInfo');
           next();
         } catch (error) {
+          // if token exist, but request fails, clear the token and logout, and redirect to login page
           await store.dispatch('userLogout');
           next('/login');
         }
