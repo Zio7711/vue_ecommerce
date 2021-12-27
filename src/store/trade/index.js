@@ -32,7 +32,7 @@ const actions = {
       commit('GETORDERINFO', result.data);
       return 'ok';
     } else {
-      Promise.reject(new Error('fail to get user Address'));
+      Promise.reject(new Error('fail to get order info'));
     }
   },
 };
