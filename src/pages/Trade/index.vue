@@ -11,10 +11,10 @@
         <span class="username" :class="{ selected: address.isDefault === 1 }">{{
           address.consignee
         }}</span>
-        <p>
+        <p @click="changeDefault(address, addressInfo)">
           <span class="s1">{{ address.fullAddress }}</span>
           <span class="s2">{{ address.phoneNum }}</span>
-          <span class="s3">默认地址</span>
+          <span class="s3" v-show="address.isDefault === 1">默认地址</span>
         </p>
       </div>
 
@@ -119,11 +119,21 @@
   import { mapState } from 'vuex';
   export default {
     name: 'Trade',
+    methods: {
+      changeDefault(address, addressInfo) {
+        addressInfo.forEach((item) => (item.isDefault = 0));
+        address.isDefault = 1;
+      },
+    },
 
     computed: {
       ...mapState({
         addressInfo: (state) => state.trade.address,
       }),
+
+      userDefaultAddress() {
+        return this.addressInfo.find((item) => item.isDefault === 1);
+      },
     },
 
     mounted() {
