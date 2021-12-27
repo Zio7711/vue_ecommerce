@@ -14,7 +14,7 @@
         <p @click="changeDefault(address, addressInfo)">
           <span class="s1">{{ address.fullAddress }}</span>
           <span class="s2">{{ address.phoneNum }}</span>
-          <span class="s3" v-show="address.isDefault === 1">默认地址</span>
+          <span class="s3" v-show="address.isDefault == 1">默认地址</span>
         </p>
       </div>
 
@@ -104,9 +104,9 @@
       <div class="price">应付金额:　<span>¥5399.00</span></div>
       <div class="receiveInfo">
         寄送至:
-        <span>北京市昌平区宏福科技园综合楼6层</span>
-        收货人：<span>张三</span>
-        <span>15010658793</span>
+        <span>{{ userDefaultAddress.fullAddress }}</span>
+        收货人：<span>{{ userDefaultAddress.consignee }}</span>
+        <span>{{ userDefaultAddress.phoneNum }}</span>
       </div>
     </div>
     <div class="sub clearFix">
@@ -132,7 +132,7 @@
       }),
 
       userDefaultAddress() {
-        return this.addressInfo.find((item) => item.isDefault === 1);
+        return this.addressInfo.find((item) => item.isDefault == 1);
       },
     },
 
