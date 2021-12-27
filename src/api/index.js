@@ -101,3 +101,10 @@ export const reqLogout = () => {
     method: 'get',
   });
 };
+
+export const reqAddressInfo = () => {
+  return requests({
+    url: '/user/userAddress/auth/findUserAddressList',
+    method: 'get',
+  });
+};

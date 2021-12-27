@@ -31,8 +31,7 @@
       <h5 class="pay">支付方式</h5>
       <div class="address clearFix">
         <span class="username selected">在线支付</span>
-        <span class="username" style="margin-left:5px;">货到付款</span>
-
+        <span class="username" style="margin-left: 5px">货到付款</span>
       </div>
       <div class="line"></div>
       <h5 class="pay">送货清单</h5>
@@ -47,11 +46,13 @@
         <h5>商品清单</h5>
         <ul class="list clearFix">
           <li>
-            <img src="./images/goods.png" alt="">
+            <img src="./images/goods.png" alt="" />
           </li>
           <li>
             <p>
-              Apple iPhone 6s (A1700) 64G 玫瑰金色 移动联通电信4G手机硅胶透明防摔软壳 本色系列</p>
+              Apple iPhone 6s (A1700) 64G 玫瑰金色
+              移动联通电信4G手机硅胶透明防摔软壳 本色系列
+            </p>
             <h4>7天无理由退货</h4>
           </li>
           <li>
@@ -62,11 +63,13 @@
         </ul>
         <ul class="list clearFix">
           <li>
-            <img src="./images/goods.png" alt="">
+            <img src="./images/goods.png" alt="" />
           </li>
           <li>
             <p>
-              Apple iPhone 6s (A1700) 64G 玫瑰金色 移动联通电信4G手机硅胶透明防摔软壳 本色系列</p>
+              Apple iPhone 6s (A1700) 64G 玫瑰金色
+              移动联通电信4G手机硅胶透明防摔软壳 本色系列
+            </p>
             <h4>7天无理由退货</h4>
           </li>
           <li>
@@ -78,8 +81,10 @@
       </div>
       <div class="bbs">
         <h5>买家留言：</h5>
-        <textarea placeholder="建议留言前先与商家沟通确认" class="remarks-cont"></textarea>
-
+        <textarea
+          placeholder="建议留言前先与商家沟通确认"
+          class="remarks-cont"
+        ></textarea>
       </div>
       <div class="line"></div>
       <div class="bill">
@@ -122,7 +127,7 @@
 <script>
   export default {
     name: 'Trade',
-  }
+  };
 </script>
 
 <style lang="less" scoped>
@@ -162,14 +167,14 @@
         }
 
         .username::after {
-          content: "";
+          content: '';
           display: none;
           width: 13px;
           height: 13px;
           position: absolute;
           right: 0;
           bottom: 0;
-          background: url(./images/choosed.png) no-repeat;
+          background: url(./images/chosen.png) no-repeat;
         }
 
         .username.selected {
@@ -190,7 +195,6 @@
 
           .s1 {
             float: left;
-
           }
 
           .s2 {
@@ -270,7 +274,6 @@
             line-height: 30px;
 
             p {
-
               margin-bottom: 20px;
             }
 
@@ -280,7 +283,6 @@
             }
 
             h3 {
-
               color: #e12228;
             }
           }
@@ -366,14 +368,12 @@
         float: right;
         width: 164px;
         height: 56px;
-        font: 700 18px "微软雅黑";
+        font: 700 18px '微软雅黑';
         line-height: 56px;
         text-align: center;
         color: #fff;
         background-color: #e1251b;
-
       }
     }
-
   }
 </style>
