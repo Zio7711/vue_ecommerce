@@ -108,3 +108,10 @@ export const reqAddressInfo = () => {
     method: 'get',
   });
 };
+
+export const reqOrderInfo = () => {
+  return requests({
+    url: '/order/auth/trade',
+    method: 'get',
+  });
+};
