@@ -61,6 +61,7 @@
         <textarea
           placeholder="建议留言前先与商家沟通确认"
           class="remarks-cont"
+          v-model="msg"
         ></textarea>
       </div>
       <div class="line"></div>
@@ -73,8 +74,11 @@
     <div class="money clearFix">
       <ul>
         <li>
-          <b><i>1</i>件商品，总商品金额</b>
-          <span>¥5399.00</span>
+          <b
+            ><i>{{ orderInfo.totalNum }}</i
+            >件商品，总商品金额</b
+          >
+          <span>¥{{ orderInfo.totalAmount }}.00</span>
         </li>
         <li>
           <b>返现：</b>
@@ -87,7 +91,9 @@
       </ul>
     </div>
     <div class="trade">
-      <div class="price">应付金额:　<span>¥5399.00</span></div>
+      <div class="price">
+        应付金额:　<span>¥{{ orderInfo.totalAmount }}.00</span>
+      </div>
       <div class="receiveInfo">
         寄送至:
         <span>{{ userDefaultAddress.fullAddress }}</span>
@@ -105,6 +111,11 @@
   import { mapState } from 'vuex';
   export default {
     name: 'Trade',
+    data() {
+      return {
+        msg: '',
+      };
+    },
     methods: {
       changeDefault(address, addressInfo) {
         addressInfo.forEach((item) => (item.isDefault = 0));
