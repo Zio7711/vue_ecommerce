@@ -40,7 +40,7 @@ let router = new VueRouter({
   },
 });
 
-router.beforeEach((to, from, next) => {
+router.beforeEach(async (to, from, next) => {
   // to: the url you want to redirect to
   // from: the address you redirect from
   // next: passing function
@@ -48,11 +48,24 @@ router.beforeEach((to, from, next) => {
   // next();
 
   let token = store.state.user.token;
+  let name = store.state.user.userInfo.name;
+
   if (token) {
     if (to.path === '/login') {
       next('/');
     } else {
-      next();
+      // go to other page expect login
+      if (name) {
+        next();
+      } else {
+        try {
+          await store.dispatch('getUserInfo');
+          next();
+        } catch (error) {
+          await store.dispatch('userLogout');
+          next('/login');
+        }
+      }
     }
   } else {
     next();
