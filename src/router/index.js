@@ -32,9 +32,19 @@ VueRouter.prototype.replace = function (location, resolve, reject) {
   }
 };
 
-export default new VueRouter({
+let router = new VueRouter({
   routes,
   scrollBehavior() {
     return { y: 0 };
   },
 });
+
+router.beforeEach((to, from, next) => {
+  // to: the url you want to redirect to
+  // from: the address you redirect from
+  // next: passing function
+
+  next();
+});
+
+export default router;
