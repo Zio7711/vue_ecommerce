@@ -1,3 +1,4 @@
+import store from '@/store';
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import routes from './routes';
@@ -44,7 +45,18 @@ router.beforeEach((to, from, next) => {
   // from: the address you redirect from
   // next: passing function
 
-  next();
+  // next();
+
+  let token = store.state.user.token;
+  if (token) {
+    if (to.path === '/login') {
+      next('/');
+    } else {
+      next();
+    }
+  } else {
+    next();
+  }
 });
 
 export default router;
