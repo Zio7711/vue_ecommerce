@@ -8,7 +8,7 @@
         v-for="address in addressInfo"
         :key="address.id"
       >
-        <span class="username" :class="{ selected: address.isDefault === 1 }">{{
+        <span class="username" :class="{ selected: address.isDefault == 1 }">{{
           address.consignee
         }}</span>
         <p @click="changeDefault(address, addressInfo)">
