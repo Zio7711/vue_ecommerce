@@ -140,6 +140,8 @@
 
         if (result.code === 200) {
           this.orderId = result.data;
+
+          this.$router.push('/pay?orderId=' + this.orderId);
         } else {
           alert(result.message);
         }
