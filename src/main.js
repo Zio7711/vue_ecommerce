@@ -9,6 +9,8 @@ import store from './store';
 import '@/mock/mockServe';
 import 'swiper/css/swiper.css';
 
+import * as API from '@/api';
+
 Vue.component(TypeNav.name, TypeNav);
 Vue.component(Carousel.name, Carousel);
 Vue.component(Pagination.name, Pagination);
@@ -23,5 +25,6 @@ new Vue({
 
   beforeCreate() {
     Vue.prototype.$bus = this;
+    Vue.prototype.$API = API;
   },
 }).$mount('#app');

@@ -102,13 +102,14 @@
       </div>
     </div>
     <div class="sub clearFix">
-      <router-link class="subBtn" to="/pay">提交订单</router-link>
+      <a class="subBtn" @click="submitOrder">提交订单</a>
     </div>
   </div>
 </template>
 
 <script>
   import { mapState } from 'vuex';
+
   export default {
     name: 'Trade',
     data() {
@@ -121,6 +122,8 @@
         addressInfo.forEach((item) => (item.isDefault = 0));
         address.isDefault = 1;
       },
+
+      submitOrder() {},
     },
 
     computed: {
