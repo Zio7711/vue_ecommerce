@@ -115,6 +115,7 @@
     data() {
       return {
         msg: '',
+        orderId: '',
       };
     },
     methods: {
@@ -123,7 +124,26 @@
         address.isDefault = 1;
       },
 
-      submitOrder() {},
+      async submitOrder() {
+        let { tradeNo } = this.orderInfo;
+
+        let data = {
+          consignee: this.userDefaultAddress.consignee,
+          consigneeTel: this.userDefaultAddress.phoneNum,
+          deliveryAddress: this.userDefaultAddress.fullAddress,
+          paymentWay: 'ONLINE',
+          orderComment: this.msg,
+          orderDetailList: this.orderInfo.detailArrayList,
+        };
+
+        let result = await this.$API.reqSubmitOrder(tradeNo, data);
+
+        if (result.code === 200) {
+          this.orderId = result.data;
+        } else {
+          alert(result.message);
+        }
+      },
     },
 
     computed: {
