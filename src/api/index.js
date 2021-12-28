@@ -115,3 +115,11 @@ export const reqOrderInfo = () => {
     method: 'get',
   });
 };
+
+export const reqSubmitOrder = (tradeNo, data) => {
+  return requests({
+    url: `order/auth/submitOrder?tradeNo=${tradeNo}`,
+    data,
+    method: 'post',
+  });
+};
