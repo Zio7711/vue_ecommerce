@@ -17,7 +17,7 @@
           >
           <span class="fr"
             ><em class="lead">应付金额：</em
-            ><em class="orange money">￥17,654</em></span
+            ><em class="orange money">￥{{ payInfo.totalFee }}</em></span
           >
         </div>
       </div>
@@ -76,7 +76,7 @@
         <div class="hr"></div>
 
         <div class="submit">
-          <router-link class="btn" to="/paysuccess">立即支付</router-link>
+          <a class="btn">立即支付</a>
         </div>
         <div class="otherPay">
           <div class="step-tit">
@@ -95,6 +95,11 @@
 <script>
   export default {
     name: 'Pay',
+    data() {
+      return {
+        payInfo: {},
+      };
+    },
     computed: {
       orderId() {
         return this.$route.query.orderId;
@@ -104,7 +109,9 @@
     methods: {
       async getPayInfo() {
         let result = await this.$API.reqPayInfo(this.orderId);
-        console.log(result);
+        if (result.code === 200) {
+          this.payInfo = result.data;
+        }
       },
     },
 
