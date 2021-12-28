@@ -123,3 +123,10 @@ export const reqSubmitOrder = (tradeNo, data) => {
     method: 'post',
   });
 };
+
+export const reqPayInfo = (orderId) => {
+  return requests({
+    url: `/payment/weixin/createNative/${orderId}`,
+    method: 'get',
+  });
+};
