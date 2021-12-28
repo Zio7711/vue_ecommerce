@@ -100,6 +100,17 @@
         return this.$route.query.orderId;
       },
     },
+
+    methods: {
+      async getPayInfo() {
+        let result = await this.$API.reqPayInfo(this.orderId);
+        console.log(result);
+      },
+    },
+
+    mounted() {
+      this.getPayInfo();
+    },
   };
 </script>
 
