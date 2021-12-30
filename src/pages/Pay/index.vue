@@ -1,5 +1,6 @@
 <template>
   <div class="pay-main">
+    <el-button type="primary">test</el-button>
     <div class="pay-container">
       <div class="checkout-tit">
         <h4 class="tit-txt">

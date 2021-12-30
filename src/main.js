@@ -8,12 +8,14 @@ import Pagination from '@/components/Pagination';
 import store from './store';
 import '@/mock/mockServe';
 import 'swiper/css/swiper.css';
+import { Button } from 'element-ui';
 
 import * as API from '@/api';
 
 Vue.component(TypeNav.name, TypeNav);
 Vue.component(Carousel.name, Carousel);
 Vue.component(Pagination.name, Pagination);
+Vue.component(Button.name, Button);
 
 Vue.config.productionTip = false;
 
