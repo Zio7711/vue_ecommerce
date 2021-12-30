@@ -100,6 +100,8 @@
     data() {
       return {
         payInfo: {},
+        timer: null,
+        code: '',
       };
     },
     computed: {
@@ -127,6 +129,20 @@
           confirmButtonText: '已支付成功',
           showClose: false,
         });
+
+        if (!this.timer) {
+          this.timer = setInterval(async () => {
+            let result = await this.$API.reqPayStatus(this.orderId);
+            if (result.code === 200) {
+              clearInterval(this.timer);
+              this.timer = null;
+
+              this.code = result.code;
+              this.$msgbox.close();
+              this.$router.push('/paysuccess');
+            }
+          }, 1000);
+        }
       },
     },
 
