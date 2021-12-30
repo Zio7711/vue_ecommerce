@@ -93,6 +93,8 @@
 </template>
 
 <script>
+  import QRCode from 'qrcode';
+
   export default {
     name: 'Pay',
     data() {
@@ -114,19 +116,17 @@
         }
       },
 
-      open() {
-        this.$alert(
-          '<strong>This is <i>HTML</i> string</strong>',
-          'HTML String',
-          {
-            dangerouslyUseHTMLString: true,
-            center: true,
-            showCancelButton: true,
-            cancelButtonText: '支付遇见问题',
-            confirmButtonText: '已支付成功',
-            showClose: false,
-          }
-        );
+      async open() {
+        let url = await QRCode.toDataURL(this.payInfo.codeUrl);
+
+        this.$alert(`<img src=${url} />`, '请你微信支付', {
+          dangerouslyUseHTMLString: true,
+          center: true,
+          showCancelButton: true,
+          cancelButtonText: '支付遇见问题',
+          confirmButtonText: '已支付成功',
+          showClose: false,
+        });
       },
     },
 
