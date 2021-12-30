@@ -130,3 +130,10 @@ export const reqPayInfo = (orderId) => {
     method: 'get',
   });
 };
+
+export const reqPayStatus = (orderId) => {
+  return requests({
+    url: `/payment/weixin/queryPayStatus/${orderId}`,
+    method: 'get',
+  });
+};
