@@ -120,6 +120,11 @@
           'HTML String',
           {
             dangerouslyUseHTMLString: true,
+            center: true,
+            showCancelButton: true,
+            cancelButtonText: '支付遇见问题',
+            confirmButtonText: '已支付成功',
+            showClose: false,
           }
         );
       },
