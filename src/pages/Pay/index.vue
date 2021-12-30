@@ -1,6 +1,5 @@
 <template>
   <div class="pay-main">
-    <el-button type="primary">test</el-button>
     <div class="pay-container">
       <div class="checkout-tit">
         <h4 class="tit-txt">
@@ -77,7 +76,7 @@
         <div class="hr"></div>
 
         <div class="submit">
-          <a class="btn">立即支付</a>
+          <a class="btn" @click="open">立即支付</a>
         </div>
         <div class="otherPay">
           <div class="step-tit">
@@ -113,6 +112,16 @@
         if (result.code === 200) {
           this.payInfo = result.data;
         }
+      },
+
+      open() {
+        this.$alert(
+          '<strong>This is <i>HTML</i> string</strong>',
+          'HTML String',
+          {
+            dangerouslyUseHTMLString: true,
+          }
+        );
       },
     },
 
