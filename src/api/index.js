@@ -137,3 +137,10 @@ export const reqPayStatus = (orderId) => {
     method: 'get',
   });
 };
+
+export const reqMyOrderList = (page, limit) => {
+  return requests({
+    url: `/order/auth/${page}/${limit}`,
+    method: 'get',
+  });
+};
