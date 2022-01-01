@@ -8,8 +8,17 @@ import ShopCart from '@/pages/ShopCart';
 import Trade from '@/pages/Trade';
 import Pay from '@/pages/Pay';
 import PaySuccess from '@/pages/PaySuccess';
+import Center from '@/pages/Center';
 
 export default [
+  {
+    path: '/center',
+    name: 'center',
+    component: Center,
+    meta: {
+      show: true,
+    },
+  },
   {
     path: '/paysuccess',
     name: 'paysuccess',
