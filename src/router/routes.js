@@ -9,6 +9,8 @@ import Trade from '@/pages/Trade';
 import Pay from '@/pages/Pay';
 import PaySuccess from '@/pages/PaySuccess';
 import Center from '@/pages/Center';
+import MyOrder from '@/pages/Center/MyOrder';
+import GroupOrder from '@/pages/Center/GroupOrder';
 
 export default [
   {
@@ -18,6 +20,18 @@ export default [
     meta: {
       show: true,
     },
+
+    children: [
+      {
+        path: 'myorder',
+        component: MyOrder,
+      },
+
+      {
+        path: 'grouporder',
+        component: GroupOrder,
+      },
+    ],
   },
   {
     path: '/paysuccess',
