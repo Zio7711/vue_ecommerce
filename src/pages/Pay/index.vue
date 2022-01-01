@@ -128,6 +128,13 @@
           cancelButtonText: '支付遇见问题',
           confirmButtonText: '已支付成功',
           showClose: false,
+          beforeClose: (type, instance, done) => {
+            if (type === 'cancel') {
+              alert('Please contact manager');
+              clearInterval(this.timer);
+              this.timer = null;
+            }
+          },
         });
 
         if (!this.timer) {
