@@ -133,6 +133,14 @@
               alert('Please contact manager');
               clearInterval(this.timer);
               this.timer = null;
+              done();
+            } else {
+              // if (this.code === 200) {
+              clearInterval(this.timer);
+              this.timer = null;
+              done();
+              this.$router.push('/paysuccess');
+              // }
             }
           },
         });
