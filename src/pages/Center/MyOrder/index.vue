@@ -5,7 +5,7 @@
       <div class="title">
         <h3>我的订单</h3>
       </div>
-      <div class="chosetype">
+      <div class="choseType">
         <table>
           <thead>
             <tr>
@@ -24,7 +24,7 @@
           <thead>
             <tr>
               <th colspan="5">
-                <span class="ordertitle"
+                <span class="orderTitle"
                   >2017-02-11 11:59　订单编号：7867473872181848
                   <span class="pull-right delete"
                     ><img src="../images/delete.png" /></span
@@ -47,7 +47,7 @@
               </td>
               <td rowspan="2" width="8%" class="center">小丽</td>
               <td rowspan="2" width="13%" class="center">
-                <ul class="unstyled">
+                <ul class="un-styled">
                   <li>总金额¥138.00</li>
                   <li>在线支付</li>
                 </ul>
@@ -56,9 +56,9 @@
                 <a href="#" class="btn">已完成 </a>
               </td>
               <td rowspan="2" width="13%" class="center">
-                <ul class="unstyled">
+                <ul class="un-styled">
                   <li>
-                    <a href="mycomment.html" target="_blank">评价|晒单</a>
+                    <a target="_blank">评价|晒单</a>
                   </li>
                 </ul>
               </td>
@@ -83,7 +83,7 @@
           <thead>
             <tr>
               <th colspan="5">
-                <span class="ordertitle"
+                <span class="orderTitle"
                   >2017-02-11 11:59　订单编号：7867473872181848
                   <span class="pull-right delete"
                     ><img src="../images/delete.png" /></span
@@ -106,7 +106,7 @@
               </td>
               <td rowspan="2" width="8%" class="center">小丽</td>
               <td rowspan="2" width="13%" class="center">
-                <ul class="unstyled">
+                <ul class="un-styled">
                   <li>总金额¥138.00</li>
                   <li>在线支付</li>
                 </ul>
@@ -115,9 +115,9 @@
                 <a href="#" class="btn">已完成 </a>
               </td>
               <td rowspan="2" width="13%" class="center">
-                <ul class="unstyled">
+                <ul class="un-styled">
                   <li>
-                    <a href="mycomment.html" target="_blank">评价|晒单</a>
+                    <a target="_blank">评价|晒单</a>
                   </li>
                 </ul>
               </td>
@@ -144,7 +144,7 @@
             <li class="prev disabled">
               <a href="javascript:">«上一页</a>
             </li>
-            <li class="page actived">
+            <li class="page active">
               <a href="javascript:">1</a>
             </li>
             <li class="page">

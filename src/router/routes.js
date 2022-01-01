@@ -31,6 +31,10 @@ export default [
         path: 'grouporder',
         component: GroupOrder,
       },
+      {
+        path: '/center',
+        redirect: '/center/myorder',
+      },
     ],
   },
   {

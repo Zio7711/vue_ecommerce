@@ -6,8 +6,12 @@
         <div class="order-left">
           <dl>
             <dt><i>·</i> 订单中心</dt>
-            <dd>我的订单</dd>
-            <dd>团购订单</dd>
+            <dd>
+              <router-link to="/center/myorder">我的订单</router-link>
+            </dd>
+            <dd>
+              <router-link to="/center/grouporder">团购订单</router-link>
+            </dd>
             <dd>本地生活订单</dd>
             <dd>我的预售</dd>
             <dd>评价晒单</dd>
@@ -49,6 +53,7 @@
             <dd>收货地址</dd>
           </dl>
         </div>
+        <router-view></router-view>
       </div>
     </div>
   </div>
@@ -124,7 +129,7 @@
             }
 
             //表头
-            .chosetype {
+            .choseType {
               margin-bottom: 15px;
               color: #666;
 
@@ -257,7 +262,7 @@
                       border-color: #28a3ef;
                       border-left: 0;
 
-                      &.actived {
+                      &.active {
                         background-color: #28a3ef;
 
                         a {
