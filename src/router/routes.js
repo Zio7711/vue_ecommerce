@@ -44,13 +44,6 @@ export default [
     meta: {
       show: true,
     },
-    beforeEnter: (to, from, next) => {
-      if (from.path === 'pay') {
-        next();
-      } else {
-        next(false);
-      }
-    },
   },
   {
     path: '/pay',
@@ -60,7 +53,7 @@ export default [
       show: true,
     },
     beforeEnter: (to, from, next) => {
-      if (from.path === 'trade') {
+      if (from.path === '/trade') {
         next();
       } else {
         next(false);
