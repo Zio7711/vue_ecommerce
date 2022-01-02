@@ -12,6 +12,14 @@ import { Button, MessageBox } from 'element-ui';
 
 import * as API from '@/api';
 
+import VueLazyload from 'vue-lazyload';
+import Anais from '@/assets/lazyload.jpg';
+
+Vue.use(VueLazyload, {
+  // default image
+  loading: Anais,
+});
+
 Vue.component(TypeNav.name, TypeNav);
 Vue.component(Carousel.name, Carousel);
 Vue.component(Pagination.name, Pagination);
