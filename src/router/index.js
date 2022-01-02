@@ -70,6 +70,10 @@ router.beforeEach(async (to, from, next) => {
       }
     }
   } else {
+    let toPath = to.path;
+    if (toPath.indexOf('/trade') !== -1 || toPath.indexOf('/pay') !== -1) {
+      next('/login');
+    }
     next();
   }
 });
