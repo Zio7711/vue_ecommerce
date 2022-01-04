@@ -117,21 +117,25 @@
       },
 
       async userRegister() {
-        try {
-          const { phone, code, password, password1 } = this;
-          phone &&
-            code &&
-            password === password1 &&
-            (await this.$store.dispatch('userRegister', {
-              phone,
-              code,
-              password,
-              password1,
-            }));
+        const success = await this.$validator.validateAll();
 
-          this.$router.push('/login');
-        } catch (error) {
-          alert(error.message);
+        if (success) {
+          try {
+            const { phone, code, password, password1 } = this;
+            phone &&
+              code &&
+              password === password1 &&
+              (await this.$store.dispatch('userRegister', {
+                phone,
+                code,
+                password,
+                password1,
+              }));
+
+            this.$router.push('/login');
+          } catch (error) {
+            alert(error.message);
+          }
         }
       },
     },
