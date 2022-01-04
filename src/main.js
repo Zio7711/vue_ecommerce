@@ -15,6 +15,8 @@ import * as API from '@/api';
 import VueLazyload from 'vue-lazyload';
 import Anais from '@/assets/lazyload.jpg';
 
+import '@/plugins/validate';
+
 Vue.use(VueLazyload, {
   // default image
   loading: Anais,
