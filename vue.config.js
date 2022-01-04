@@ -2,6 +2,8 @@ module.exports = {
   //disable eslint
   lintOnSave: false,
 
+  productionSourceMap: false,
+
   devServer: {
     proxy: {
       '/api': {
