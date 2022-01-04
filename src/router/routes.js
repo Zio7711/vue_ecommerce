@@ -1,4 +1,4 @@
-import Home from '@/pages/Home';
+// import Home from '@/pages/Home';
 import Search from '@/pages/Search';
 import Register from '@/pages/Register';
 import Login from '@/pages/Login';
@@ -95,7 +95,7 @@ export default [
   },
   {
     path: '/home',
-    component: Home,
+    component: () => import('@/pages/Home'),
     meta: {
       show: true,
     },
