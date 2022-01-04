@@ -14,6 +14,14 @@ VeeValidate.Validator.localize('zh_CN', {
     code: '验证码',
     password: '密码',
     password1: '确认密码',
-    isCheck: '协议',
+    agree: '协议',
   },
+});
+
+VeeValidate.Validator.extend('agree', {
+  validate: (value) => {
+    return value;
+  },
+
+  getMessage: (field) => field + '必须同意',
 });
