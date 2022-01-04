@@ -12,7 +12,6 @@ VeeValidate.Validator.localize('zh_CN', {
   attributes: {
     phone: '手机号',
     code: '验证码',
-
     password: '密码',
     password1: '确认密码',
     isCheck: '协议',
