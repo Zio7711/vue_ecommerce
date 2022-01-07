@@ -43,6 +43,7 @@ export const reqGoodsInfo = (skuId) => {
   });
 };
 
+// getting shopcart info
 export const reqAddOrUpdateShopCart = (skuId, skuNum) => {
   return requests({
     url: `/cart/addToCart/${skuId}/${skuNum}`,
@@ -50,6 +51,7 @@ export const reqAddOrUpdateShopCart = (skuId, skuNum) => {
   });
 };
 
+//getting shop cart item info
 export const reqCartList = () => {
   return requests({
     url: '/cart/cartList',
@@ -57,6 +59,7 @@ export const reqCartList = () => {
   });
 };
 
+// delete item in the shop cart
 export const reqDeleteCartById = (skuId) => {
   return requests({
     url: `/cart/deleteCart/${skuId}`,
@@ -64,6 +67,7 @@ export const reqDeleteCartById = (skuId) => {
   });
 };
 
+// update checked item by it
 export const reqUpdateCheckedById = (skuId, isChecked) => {
   return requests({
     url: `/cart/checkCart/${skuId}/${isChecked}`,
@@ -71,6 +75,7 @@ export const reqUpdateCheckedById = (skuId, isChecked) => {
   });
 };
 
+// getting verification code
 export const reqGetCode = (phone) => {
   return requests({
     url: `/user/passport/sendCode/${phone}`,
@@ -78,6 +83,7 @@ export const reqGetCode = (phone) => {
   });
 };
 
+// registering an account for new users
 export const reqUserRegister = (data) => {
   return requests({
     url: '/user/passport/register',
@@ -86,6 +92,7 @@ export const reqUserRegister = (data) => {
   });
 };
 
+// requesting login
 export const reqUserLogin = (data) => {
   return requests({
     url: '/user/passport/login',
