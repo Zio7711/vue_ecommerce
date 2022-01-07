@@ -16,11 +16,16 @@ const requests = axios.create({
 });
 
 //请求拦截器
+// before sending request, do something here
 requests.interceptors.request.use((config) => {
+  // config object
+  // let progress bar run
   if (store.state.detail.uuid_token) {
+    // add userTempId to the header, so that backend can read it
     config.headers.userTempId = store.state.detail.uuid_token;
   }
 
+  // add token to header sending to the backend
   if (store.state.user.token) {
     config.headers.token = store.state.user.token;
   }
