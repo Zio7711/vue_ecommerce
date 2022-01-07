@@ -1,10 +1,12 @@
 //api management
+// import axios instance
 import requests from './axios';
 
 //api/product/getBaseCategoryList get no parameters
 
 import mockRequests from './mockAjax';
 
+// notes: the function must return the request Promise
 export const reqCategoryList = () => {
   //send request return a Promise
   return requests({
@@ -13,15 +15,18 @@ export const reqCategoryList = () => {
   });
 };
 
+// getting banner info for the Home component
 export const reqGetBannerList = () => {
   return mockRequests.get('/banner');
 };
 
+// getting floor data
 export const reqFloorList = () => {
   return mockRequests.get('/floor');
 };
 
 // post request with params /api/list
+// method: post
 export const reqGetSearchInfo = (params) => {
   return requests({
     url: '/list',
@@ -30,6 +35,7 @@ export const reqGetSearchInfo = (params) => {
   });
 };
 
+//getting products info
 export const reqGoodsInfo = (skuId) => {
   return requests({
     url: `/item/${skuId}`,
