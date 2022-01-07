@@ -1,10 +1,17 @@
+// encapsulate axios
 import axios from 'axios';
 import nprogress from 'nprogress';
+
+//if the progress bar does not display, you must be forgetting import the css file
 import 'nprogress/nprogress.css';
+
+//import store in the module
 import store from '@/store';
 
+// request is the instance of axios
 const requests = axios.create({
   baseURL: 'api',
+  // the request cannot exceed 5 seconds
   timeout: 5000,
 });
 
