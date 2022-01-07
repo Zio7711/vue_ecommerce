@@ -101,6 +101,7 @@ export const reqUserLogin = (data) => {
   });
 };
 
+// getting user information after login
 export const reqUserInfo = () => {
   return requests({
     url: '/user/passport/auth/getUserInfo',
@@ -108,6 +109,7 @@ export const reqUserInfo = () => {
   });
 };
 
+// requesting user log out
 export const reqLogout = () => {
   return requests({
     url: '/user/passport/logout',
@@ -115,6 +117,7 @@ export const reqLogout = () => {
   });
 };
 
+// getting user shipping location info
 export const reqAddressInfo = () => {
   return requests({
     url: '/user/userAddress/auth/findUserAddressList',
@@ -122,6 +125,7 @@ export const reqAddressInfo = () => {
   });
 };
 
+// getting user order info
 export const reqOrderInfo = () => {
   return requests({
     url: '/order/auth/trade',
@@ -129,6 +133,7 @@ export const reqOrderInfo = () => {
   });
 };
 
+// submitting order
 export const reqSubmitOrder = (tradeNo, data) => {
   return requests({
     url: `order/auth/submitOrder?tradeNo=${tradeNo}`,
@@ -137,6 +142,7 @@ export const reqSubmitOrder = (tradeNo, data) => {
   });
 };
 
+// requesting checkout
 export const reqPayInfo = (orderId) => {
   return requests({
     url: `/payment/weixin/createNative/${orderId}`,
@@ -144,6 +150,7 @@ export const reqPayInfo = (orderId) => {
   });
 };
 
+// checking payment status
 export const reqPayStatus = (orderId) => {
   return requests({
     url: `/payment/weixin/queryPayStatus/${orderId}`,
@@ -151,6 +158,7 @@ export const reqPayStatus = (orderId) => {
   });
 };
 
+// getting user order list
 export const reqMyOrderList = (page, limit) => {
   return requests({
     url: `/order/auth/${page}/${limit}`,
