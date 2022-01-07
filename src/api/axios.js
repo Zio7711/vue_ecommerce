@@ -35,10 +35,13 @@ requests.interceptors.request.use((config) => {
 });
 
 //响应拦截器
+// after sending request, if successful, do something here
 requests.interceptors.response.use(
   //config object, header as a property
   (res) => {
+    // finish the progress bar
     nprogress.done();
+    // something that will be done after request
     return res.data;
   },
   (err) => {
@@ -46,4 +49,5 @@ requests.interceptors.response.use(
   }
 );
 
+// export the axios instance
 export default requests;
