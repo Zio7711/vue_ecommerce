@@ -1,24 +1,9 @@
 # vue_ecommerce
 
-## Project setup
-```
-npm install
-```
+## Project Description
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+- This is a single page web application.
+- It includes Home page, Search page, Product detail page, Shopping cart page, Checkout page, Checkout page and user Login and Logout page.
+- It uses Vue, Vuex, WebPack, Axios and Element-ui.
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## Stack options
