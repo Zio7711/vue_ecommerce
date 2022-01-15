@@ -33,60 +33,9 @@
         <h4>
           支付宝账户信息：（很重要，<span class="save">请保存！！！</span>）
         </h4>
-        <ul>
-          <li>支付帐号：11111111</li>
-          <li>密码：111111</li>
-          <li>支付密码：111111</li>
-        </ul>
       </div>
-      <div class="checkout-steps">
-        <div class="step-tit">
-          <h5>支付平台</h5>
-        </div>
-        <div class="step-cont">
-          <ul class="payType">
-            <li><img src="./images/pay2.jpg" /></li>
-            <li><img src="./images/pay3.jpg" /></li>
-          </ul>
-        </div>
-        <div class="hr"></div>
-
-        <div class="payShopInfo">
-          <div class="step-tit">
-            <h5>支付网银</h5>
-          </div>
-          <div class="step-cont">
-            <ul class="payType">
-              <li><img src="./images/pay10.jpg" /></li>
-              <li><img src="./images/pay11.jpg" /></li>
-              <li><img src="./images/pay12.jpg" /></li>
-              <li><img src="./images/pay13.jpg" /></li>
-              <li><img src="./images/pay14.jpg" /></li>
-              <li><img src="./images/pay15.jpg" /></li>
-              <li><img src="./images/pay16.jpg" /></li>
-              <li><img src="./images/pay17.jpg" /></li>
-              <li><img src="./images/pay18.jpg" /></li>
-              <li><img src="./images/pay19.jpg" /></li>
-              <li><img src="./images/pay20.jpg" /></li>
-              <li><img src="./images/pay21.jpg" /></li>
-              <li><img src="./images/pay22.jpg" /></li>
-            </ul>
-          </div>
-        </div>
-        <div class="hr"></div>
-
-        <div class="submit">
-          <a class="btn" @click="open">立即支付</a>
-        </div>
-        <div class="otherPay">
-          <div class="step-tit">
-            <h5>其他支付方式</h5>
-          </div>
-          <div class="step-cont">
-            <span><a target="_blank">微信支付</a></span>
-            <span>中国银联</span>
-          </div>
-        </div>
+      <div class="submit">
+        <a class="btn" @click="open">立即支付</a>
       </div>
     </div>
   </div>

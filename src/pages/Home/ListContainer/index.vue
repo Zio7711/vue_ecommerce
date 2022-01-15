@@ -192,6 +192,7 @@
           margin-top: 5px;
 
           img {
+            width: 1000px;
             opacity: 0.8;
             transition: all 400ms;
 
