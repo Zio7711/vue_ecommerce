@@ -3,12 +3,12 @@
     <!-- global component leveling menu -->
     <TypeNav />
     <ListContainer />
-    <Recommend />
-    <Rank />
-    <Likes />
+    <!-- <Recommend /> -->
+    <!-- <Rank /> -->
+    <!-- <Likes /> -->
     <!-- Floor component: it does not send any request in it, data is passed by the father component -->
-    <Floor v-for="floor in floorList" :key="floor.id" :list="floor" />
-    <Brand />
+    <!-- <Floor v-for="floor in floorList" :key="floor.id" :list="floor" /> -->
+    <!-- <Brand /> -->
   </div>
 </template>
 
