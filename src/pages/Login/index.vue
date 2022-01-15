@@ -6,9 +6,6 @@
         <div class="loginForm">
           <ul class="tab clearFix">
             <li>
-              <a href="##" style="border-right: 0">扫描登录</a>
-            </li>
-            <li>
               <a href="##" class="current">账户登录</a>
             </li>
           </ul>
@@ -129,9 +126,9 @@
         padding: 20px;
 
         .tab {
+          border: 0.5px solid #e4e4e4;
           li {
-            width: 50%;
-            float: left;
+            width: 100%;
             text-align: center;
 
             a {
