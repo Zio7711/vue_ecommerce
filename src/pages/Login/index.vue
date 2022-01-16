@@ -112,6 +112,8 @@
         width: 1200px;
         height: 487px;
         margin: 0 auto;
+        display: flex;
+        justify-content: center;
         // background: url(./images/loginbg.png) no-repeat;
       }
 
