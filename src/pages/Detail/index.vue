@@ -410,7 +410,7 @@
                 float: left;
 
                 a {
-                  background-color: #e1251b;
+                  background-color: #008060;
                   padding: 0 25px;
                   font-size: 16px;
                   color: #fff;
@@ -447,7 +447,7 @@
             border-bottom: 1px solid #ccc;
 
             &.active {
-              border-top: 3px solid #e1251b;
+              border-top: 3px solid #008060;
               border-bottom: 0;
               font-weight: normal;
             }
@@ -621,8 +621,8 @@
               }
 
               .addShopcart {
-                background-color: #e1251b;
-                border: 1px solid #e1251b;
+                background-color: #008060;
+                border: 1px solid #008060;
                 padding: 10px 25px;
                 font-size: 16px;
                 color: #fff;
@@ -649,7 +649,7 @@
               &.active {
                 a {
                   // border: 0;
-                  background: #e1251b;
+                  background: #008060;
                   color: #fff;
                 }
               }

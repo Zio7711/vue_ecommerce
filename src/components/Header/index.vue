@@ -165,7 +165,7 @@
             width: 490px;
             height: 32px;
             padding: 0px 4px;
-            border: 2px solid #ea4a36;
+            border: 2px solid rgb(149, 191, 71);
             float: left;
 
             &:focus {
@@ -176,7 +176,7 @@
           button {
             height: 32px;
             width: 68px;
-            background-color: #ea4a36;
+            background-color: rgb(149, 191, 71);
             border: none;
             color: #fff;
             float: left;

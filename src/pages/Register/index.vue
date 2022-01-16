@@ -165,7 +165,7 @@
           float: right;
 
           a {
-            color: #e1251b;
+            color: #008060;
           }
         }
       }
@@ -233,7 +233,7 @@
           outline: none;
           width: 270px;
           height: 36px;
-          background: #e1251b;
+          background: #008060;
           color: #fff !important;
           display: inline-block;
           font-size: 16px;

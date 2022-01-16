@@ -162,7 +162,7 @@
           line-height: 18px;
 
           .img-item {
-            border: 1px solid #e1251b;
+            border: 1px solid #008060;
             width: 269px;
             float: left;
             overflow: hidden;
@@ -202,7 +202,7 @@
 
               .info-price {
                 font-size: 20px;
-                color: #e1251b;
+                color: #008060;
                 height: 35px;
                 padding-left: 10px;
                 display: block;

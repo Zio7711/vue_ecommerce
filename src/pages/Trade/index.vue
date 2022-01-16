@@ -214,7 +214,7 @@
         }
 
         .username.selected {
-          border-color: #e1251b;
+          border-color: #008060;
         }
 
         .username.selected::after {
@@ -408,7 +408,7 @@
         line-height: 56px;
         text-align: center;
         color: #fff;
-        background-color: #e1251b;
+        background-color: #008060;
       }
     }
   }

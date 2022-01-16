@@ -216,7 +216,7 @@
                       float: left;
                       min-width: 80px;
                       max-width: 250px;
-                      color: #e1251b;
+                      color: #008060;
 
                       &.service {
                         color: #666;

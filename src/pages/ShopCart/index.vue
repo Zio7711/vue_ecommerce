@@ -389,7 +389,7 @@
             text-align: center;
             font-size: 18px;
             font-family: 'Microsoft YaHei';
-            background: #e1251b;
+            background: #008060;
             overflow: hidden;
           }
         }

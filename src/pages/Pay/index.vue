@@ -129,7 +129,7 @@
       }
 
       .orange {
-        color: #e1251b;
+        color: #008060;
       }
 
       .money {
@@ -137,7 +137,7 @@
       }
 
       .zfb {
-        color: #e1251b;
+        color: #008060;
         font-weight: 700;
       }
 
@@ -188,13 +188,13 @@
         padding-left: 25px;
         padding-bottom: 15px;
         margin-bottom: 10px;
-        border: 2px solid #e1251b;
+        border: 2px solid #008060;
 
         h4 {
           margin: 9px 0;
           font-size: 14px;
           line-height: 21px;
-          color: #e1251b;
+          color: #008060;
         }
 
         ol {
@@ -254,8 +254,8 @@
           font: 18px '微软雅黑';
           font-weight: 700;
           border-radius: 0;
-          background-color: #e1251b;
-          border: 1px solid #e1251b;
+          background-color: #008060;
+          border: 1px solid #008060;
           color: #fff;
           text-align: center;
           vertical-align: middle;

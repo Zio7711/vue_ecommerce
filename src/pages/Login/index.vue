@@ -106,13 +106,13 @@
   .login-container {
     .login-wrap {
       height: 487px;
-      background-color: #e93854;
+      background-color: #004c3f;
 
       .login {
         width: 1200px;
         height: 487px;
         margin: 0 auto;
-        background: url(./images/loginbg.png) no-repeat;
+        // background: url(./images/loginbg.png) no-repeat;
       }
 
       .loginForm {
@@ -147,7 +147,7 @@
             .current {
               border-bottom: none;
               border-top-color: #28a3ef;
-              color: #e1251b;
+              color: #004c3f;
             }
           }
         }
@@ -212,13 +212,13 @@
             }
 
             .btn {
-              background-color: #e1251b;
+              background-color: #008060;
               padding: 6px;
               border-radius: 0;
               font-size: 16px;
               font-family: 微软雅黑;
               word-spacing: 4px;
-              border: 1px solid #e1251b;
+              border: 1px solid #008060;
               color: #fff;
               width: 100%;
               height: 36px;

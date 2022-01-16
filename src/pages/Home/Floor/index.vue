@@ -115,7 +115,7 @@
 
               &.active {
                 a {
-                  color: #e1251b;
+                  color: #008060;
                 }
               }
             }

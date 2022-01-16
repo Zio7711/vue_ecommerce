@@ -136,7 +136,7 @@
 
 <style scoped lang="less">
   .type-nav {
-    border-bottom: 2px solid #e1251b;
+    border-bottom: 2px solid #008060;
 
     .container {
       width: 1200px;
@@ -147,7 +147,7 @@
       .all {
         width: 210px;
         height: 45px;
-        background-color: #e1251b;
+        background-color: #008060;
         line-height: 45px;
         text-align: center;
         color: #fff;

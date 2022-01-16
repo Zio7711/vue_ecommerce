@@ -386,7 +386,7 @@
 
                 &.active {
                   a {
-                    background: #e1251b;
+                    background: #008060;
                     color: #fff;
                   }
                 }
@@ -502,12 +502,12 @@
                   }
 
                   .btn-danger {
-                    border: 1px solid #e1251b;
-                    color: #e1251b;
+                    border: 1px solid #008060;
+                    color: #008060;
 
                     &:hover {
-                      border: 1px solid #e1251b;
-                      background-color: #e1251b;
+                      border: 1px solid #008060;
+                      background-color: #008060;
                       color: white !important;
                       text-decoration: none;
                     }
@@ -554,7 +554,7 @@
                 &.active {
                   a {
                     background-color: #fff;
-                    color: #e1251b;
+                    color: #008060;
                     border-color: #fff;
                     cursor: default;
                   }
